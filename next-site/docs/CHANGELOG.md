@@ -1,5 +1,13 @@
 # Change log
 
+## GitHub checkpoint — 10 October 2026
+
+- Resolved organization connector access and uploaded 48 foundation files on `feature/next-foundation`.
+- Opened draft PR #1 without modifying the production branch or live website.
+- Started GitHub Actions verification. A started workflow is not a passing result; Phase 1 acceptance remains pending.
+- Kept the existing root README and initial GitHub commit history intact.
+- Ran all three browser engines on GitHub: 43/60 passed, 17 contrast failures. Kept reveal text opaque, darkened muted labels, and added retained browser reports with responsive screenshots for recheck.
+
 ## 0.1.0 — Phase 1 foundation checkpoint, 9 October 2026
 
 - Inventoried legacy source and preserved seven content routes, original artwork, project details and four hosted sample demos.

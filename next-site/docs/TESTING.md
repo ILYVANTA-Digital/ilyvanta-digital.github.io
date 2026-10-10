@@ -1,8 +1,22 @@
-# Phase 1 verification — 9 October 2026
+# Phase 1 verification — updated 10 October 2026
 
-## Status: PARTIALLY IMPLEMENTED / BROWSER ACCEPTANCE BLOCKED
+## Status: PARTIALLY IMPLEMENTED / BROWSER FIXES AWAITING RECHECK
 
 The existing production Site has not been replaced. Phase 2 has not started.
+
+## GitHub browser evidence
+
+Draft PR: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/pull/1
+
+Initial run: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/actions/runs/38046401161 at `7257388d25ed587056c398a544a627315a6745a5`.
+
+- Dependency install, lint, types, four content tests, build and 42 production HTTP assertions passed on GitHub.
+- All three browser engines installed and executed. 43 of 60 browser tests passed; 17 failed automated colour-contrast checks.
+- Nine-width overflow checks, keyboard menu, 404 recovery, reduced-motion and no-JavaScript checks passed in all three engines.
+- Low contrast affected muted labels and text during opacity-based scroll reveals. The fix keeps text fully opaque during transform animation and darkens the affected labels. It is awaiting a fresh browser run.
+- Browser screenshots and reports will be retained by CI for visual review. Automated tests and emulated viewports do not constitute physical-mobile testing.
+
+The local-environment results below are historical; remote browser execution has now resolved the browser-launch blocker.
 
 | Check | Result | Scope |
 | --- | --- | --- |
@@ -53,4 +67,4 @@ Both production checks and Playwright own their local server lifecycle. Do not s
 
 Responsive layout, navigation, contrast, runtime and hydration behavior need successful browser evidence. Inspect screenshots at desktop, tablet and phone widths, and perform a keyboard review. Fix genuine failures before advancing to Phase 2.
 
-The foundation still uses a documented HTML compatibility adapter, raw legacy image markup and legacy enhancement scripts. Native React sections and Next image migration remain pending. A finished redesign, functional lead database, email delivery, AI assistant, new 3D engine, analytics, Search Console ranking gains, remote PR and Vercel deployment are not claimed.
+The foundation still uses a documented HTML compatibility adapter, raw legacy image markup and legacy enhancement scripts. Native React sections and Next image migration remain pending. A finished redesign, functional lead database, email delivery, AI assistant, new 3D engine, analytics, Search Console ranking gains and Vercel deployment are not claimed. The draft remote PR exists; preview deployment is separately blocked by Vercel workspace authorization.

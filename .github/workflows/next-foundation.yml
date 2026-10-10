@@ -8,6 +8,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     defaults:
       run:
         working-directory: next-site
@@ -28,3 +29,12 @@ jobs:
       - run: npm run test:production
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: npm run test:e2e
+      - name: Preserve browser review evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: foundation-browser-report
+          path: |
+            next-site/playwright-report/
+            next-site/test-results/
+          retention-days: 7

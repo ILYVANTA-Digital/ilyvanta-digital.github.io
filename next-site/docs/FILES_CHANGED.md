@@ -1,10 +1,9 @@
 # Files changed — Phase 1
 
-Only Phase 1 has been implemented. Phases 2–6 have no changes. This is a migration checkpoint, not a completed redesign.
+Phase 1 is partially implemented, with browser acceptance pending. Phases 2–6 have no changes. This is a migration checkpoint, not a completed redesign.
 
 | File | Reason |
 | --- | --- |
-| `.gitignore` | Exclude secrets, dependencies, build and browser-test outputs. |
 | `.github/workflows/next-foundation.yml` | Review-branch validation and browser gates. |
 | `next-site/.env.example` | Server-only variable names without secrets. |
 | `next-site/.gitignore` | Exclude secrets, dependencies, build and browser-test outputs. |

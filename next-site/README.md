@@ -34,11 +34,11 @@ Use .env.example as a names-only template. SITE_URL controls canonicals; SITE_IN
 
 ## Workflow
 
-Local branch: feature/next-foundation. Full repository retains legacy source for rollback; app lives in next-site/. The GitHub connector previously rejected writes with 403. Local commits are not remote PRs. Do not merge or change the production domain until a preview is reviewed and all required gates pass.
+Remote branch: `feature/next-foundation` in `ILYVANTA-Digital/ilyvanta-digital.github.io`. Review: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/pull/1 (draft). The application lives in `next-site/`. The separate legacy Site checkout retains the original source; this GitHub repository contains the migration snapshot, not that checkout's full history. Do not merge or change the production domain until a preview is reviewed and all required gates pass.
 
 ## Verification status
 
-Install, lint, types, four content tests, production build and 42 HTTP assertions passed. Browser acceptance is blocked: Chromium archive failure, Firefox page creation crash, and unavailable WebKit system dependencies. See docs/TESTING.md for exact scope. Phase 2 remains gated. A configured CI job is not evidence that remote CI has run.
+Install, lint, types, four content tests, production build and 42 HTTP assertions passed locally and in GitHub Actions. The initial remote browser run passed 43/60 tests, with 17 contrast failures. Readability fixes are awaiting recheck; see docs/TESTING.md. Phase 2 remains gated. Vercel preview access is separately blocked by workspace authorization.
 
 ## Importing the legacy content
 

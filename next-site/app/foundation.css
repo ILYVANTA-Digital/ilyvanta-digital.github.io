@@ -3,3 +3,7 @@
 html:not(.navigation-ready) .menu-toggle{display:none}
 html:not(.navigation-ready) #navigation{display:flex;position:static;flex-wrap:wrap}
 html:not(.navigation-ready) .header{height:auto;min-height:100px;flex-wrap:wrap;gap:20px;padding-block:20px}
+/* Keep text readable throughout scroll transitions, including on slow devices. */
+.motion-reveal{opacity:1;transition:transform .6s}
+.hero-signature>span,.system-note,.breadcrumbs,.case-meta span,.project-brief span{color:#465d64}
+.window-top{color:#49677d}

@@ -18,13 +18,19 @@ for (const entry of pages) {
 }
 
 for (const width of [320, 360, 390, 430, 768, 1024, 1280, 1440, 1920]) {
-  test(`${width}px: preserved routes have no horizontal overflow`, async ({ page }) => {
+  test(`${width}px: preserved routes have no horizontal overflow`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 });
     for (const entry of pages) {
       await page.goto(entry.path);
       await expect(page.locator('main h1')).toBeVisible();
       const size = await page.evaluate(() => ({ content: document.documentElement.scrollWidth, viewport: document.documentElement.clientWidth }));
       expect(size.content, entry.path).toBeLessThanOrEqual(size.viewport + 1);
+      if (entry.path === '/' && [390, 768, 1440].includes(width)) {
+        await testInfo.attach(`homepage-${width}px`, {
+          body: await page.screenshot({ fullPage: true }),
+          contentType: 'image/png',
+        });
+      }
     }
   });
 }
