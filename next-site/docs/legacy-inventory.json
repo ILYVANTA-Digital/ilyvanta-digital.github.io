@@ -1,0 +1,482 @@
+[
+  {
+    "path": ".env.example",
+    "bytes": 151,
+    "sha256": "61e78a104b5852032fac752eb63a8540a3eb406fa1721c9af93552d4ff560a72",
+    "kind": "source/asset"
+  },
+  {
+    "path": ".gitignore",
+    "bytes": 73,
+    "sha256": "f2db53d66bda97c66d8c527a16e6f9e072b89dbd10081c73d3162ecbc5f82315",
+    "kind": "source/asset"
+  },
+  {
+    "path": ".openai/hosting.json",
+    "bytes": 77,
+    "sha256": "a53643cded453b025662ab239664e55fcf84e28feaf10342459a4eec21d68f7e",
+    "kind": "source/asset"
+  },
+  {
+    "path": "README.md",
+    "bytes": 4550,
+    "sha256": "bba1143454a5e2253c3dffa0ed713e6612a789e7e8d8b056b1a7cde354da1118",
+    "kind": "source/asset"
+  },
+  {
+    "path": "build.py",
+    "bytes": 24420,
+    "sha256": "9dc2a6dcb67e13ad42cb8838d41d6601d59bf6dd20032453f1819bd159d55dd6",
+    "kind": "source/asset"
+  },
+  {
+    "path": "db/schema.ts",
+    "bytes": 455,
+    "sha256": "9423469d9e0b9a28af925f107ee4518fc093b25a4bcd0e0120559868a3d4e4fa",
+    "kind": "source/asset"
+  },
+  {
+    "path": "drizzle.config.ts",
+    "bytes": 131,
+    "sha256": "09e793081a6d4e69c9d59cdab4941a17293048c4b2db8963d7a0ca4fccc8ede0",
+    "kind": "source/asset"
+  },
+  {
+    "path": "drizzle/0000_fantastic_zarek.sql",
+    "bytes": 338,
+    "sha256": "0d5f4e29ec193a291f61cdb907d875cf45b1ed783f33b7bd5fd5389a8a2a0092",
+    "kind": "source/asset"
+  },
+  {
+    "path": "drizzle/meta/0000_snapshot.json",
+    "bytes": 2084,
+    "sha256": "588e2ceb3bb841df096ae30afd2d3b73164ffb4628fa705f34a1f232fd85638e",
+    "kind": "source/asset"
+  },
+  {
+    "path": "drizzle/meta/_journal.json",
+    "bytes": 205,
+    "sha256": "90d6e524aa48907159455ad87676d35175ca3353c4e2ea6d023f9972352c9d9d",
+    "kind": "source/asset"
+  },
+  {
+    "path": "enhance.py",
+    "bytes": 16561,
+    "sha256": "664870f4f444cc7451bf5229bfea5ed86f523a27bd2c28f354005492164c10f1",
+    "kind": "source/asset"
+  },
+  {
+    "path": "handoff/ILYVANTA-Digital-GitHub-Pages.zip",
+    "bytes": 1038741,
+    "sha256": "db305382207c0ebc66752fb9663e7421a6f453518117fd8cbab93738e9bd2f7b",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/UPGRADE-REPORT.md",
+    "bytes": 5766,
+    "sha256": "0438315e8fbc4a396db82bf8aa83eae75d25e0df520a0dc065a7b2f7466e2350",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/.github/workflows/ci.yml",
+    "bytes": 303,
+    "sha256": "157283749e0085a30343cec846c61f1adb4ed24b7368f5d6d55b589a14bbd8e6",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/.nojekyll",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/404.html",
+    "bytes": 3932,
+    "sha256": "eace09dc8b3c34676297d2a94cc9a3cd6c720189db7f76b89387e9c027b3b93e",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/README.md",
+    "bytes": 1482,
+    "sha256": "c86e93d5397c4747dc78658327f3bbea1cd57bb7f8a5a06383db35037e64978c",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/app.js",
+    "bytes": 4143,
+    "sha256": "b6009907c293f99e90c799a7d87569834f7c08d42f792f63cda0ad9bafd4aaa5",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/assets/brand-sculpture.webp",
+    "bytes": 163312,
+    "sha256": "9f9098e7fc99e87ce445635fcfbc911f705090169028fd354d5dd5795d921992",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/assets/cafe-concept.webp",
+    "bytes": 195554,
+    "sha256": "3a5469e4b3d6bea8eadeb015008457c61c98d9fcd2dd97717e136407ed4b9d4d",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/assets/clinic-concept.webp",
+    "bytes": 105374,
+    "sha256": "7481f486e534fc55158b0cc84d59aba3e6f1586b7b8ba9dbbc829b602c85d0dc",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/assets/hotel.webp",
+    "bytes": 300298,
+    "sha256": "0b6baf7af6f2063ef632108d6ea9e404b1e4c940147776ec554cd7066978b818",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/assets/sports-concept.webp",
+    "bytes": 222070,
+    "sha256": "7ea3d8310024acdce8be69f4414b8b3161893adfff2000a938673a4b6fabbdce",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/demo/cafe/index.html",
+    "bytes": 800,
+    "sha256": "16381ab004f0df14d7f5fd1c695c296dd81e3dfaa06645a05b4affb10cfadb5a",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/demo/clinic/index.html",
+    "bytes": 812,
+    "sha256": "6cf9f5c4a71709fdae1aa0c15933cb2c043690e940cf2a63f95ca5a0ab1ba93d",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/demo/hotel/index.html",
+    "bytes": 806,
+    "sha256": "6af3a74c0b39a6314cd47a9e8f175a1b4f544774c1a0e63f295c8e9ee69f3a68",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/demo/sports/index.html",
+    "bytes": 812,
+    "sha256": "bf002bcbeee407fd7fc361294fe914464dbc0524e08e046041148db96062b280",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/expertise/search-visibility/index.html",
+    "bytes": 8347,
+    "sha256": "42d1597ae690c0214935a4f9c1b8539b2aa561b78113b1e8c493da52e51f8095",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/index.html",
+    "bytes": 20299,
+    "sha256": "ea03153c334e02530e63ed4a05d7bb64f842c73af78cc406940859e5cf1780b0",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/international.css",
+    "bytes": 14439,
+    "sha256": "e020d211484b7055e251ea5368409846a61e5d42127662e2c14ceeed3722c913",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/international.js",
+    "bytes": 5753,
+    "sha256": "64f45c73fcf768e5a3cab29dd6bc482ae53d7782f75d047f237ee7fe7ef8fc2f",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/privacy/index.html",
+    "bytes": 5497,
+    "sha256": "5cf9e07e3ae577ed1c9360cd96d929a24ec2032e82cb7146f1bb0f1f021522e7",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/robots.txt",
+    "bytes": 79,
+    "sha256": "e6abea2069f4ec83af207b48efcf2a93ccca0287a2e2dd1e59652700f23ddcc2",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/scripts/check-pages.py",
+    "bytes": 1600,
+    "sha256": "029f5e852f82a5fee6d43440415f007e62bbfa26ddecef72c56ffd074fe536b3",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/sitemap.xml",
+    "bytes": 612,
+    "sha256": "b4eac5184d869d1b1ef5799918a4cd609ce2ceed6e40ab924fb15d922e6274ba",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/style.css",
+    "bytes": 24550,
+    "sha256": "16f22bf1a03ce8b656bfac4d277a15a833a8194c3b1f17969d51b32a013da207",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/upgrade.css",
+    "bytes": 5407,
+    "sha256": "e8e526a4461f6b55dc6d619c6e662fbd75ef808dabaeaecea298bf9f44293ffc",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/upgrade.js",
+    "bytes": 2172,
+    "sha256": "c2fc3f5cce2fa346ed54695c5d728cf0a75031b37225acd7c898ea03bf030517",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/work/aurelia-house/index.html",
+    "bytes": 10370,
+    "sha256": "477ce9db521633bc6877397d8e47249f889178213d06432e9c1e7c088ee8a1af",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/work/cafe-workflow/index.html",
+    "bytes": 10592,
+    "sha256": "76128b02d4b4a5107926950d42380c673247046e3cba91a77dc13dd18b1b0b8b",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/work/sportshub/index.html",
+    "bytes": 10135,
+    "sha256": "559688b70d23c41b4e311efe033b3d521df3f104342a4b716f51e14a2f29c1f5",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/github-pages/work/umar-clinic/index.html",
+    "bytes": 10772,
+    "sha256": "4cdee8ada3e715a5b15fbf2d331c991c0dcf1437b90d1bfa36a96ba04587be13",
+    "kind": "generated/export"
+  },
+  {
+    "path": "handoff/qa/mobile-home.jpg",
+    "bytes": 66515,
+    "sha256": "bb4ccc1ce0f7f6d1787690795620d86d68371982a681ba0c86a04365cc7b6e2e",
+    "kind": "generated/export"
+  },
+  {
+    "path": "international.py",
+    "bytes": 9962,
+    "sha256": "b1993d15e26139cc36e1f6512988b1a3135b55f8d3906885fea6cfd0042ec6ab",
+    "kind": "source/asset"
+  },
+  {
+    "path": "package-lock.json",
+    "bytes": 78324,
+    "sha256": "6ecbe4950d247239dd987a4547fc1c5959f36a33c52cf3b3c96d36c8cb9f8263",
+    "kind": "source/asset"
+  },
+  {
+    "path": "package.json",
+    "bytes": 364,
+    "sha256": "a9b73c6675f00b7b93c9820e4ebd582e01ba8f6de56fafc75a6869e1a7cab142",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/404.html",
+    "bytes": 3984,
+    "sha256": "eed2931b263568ce8b0940cfbb895c429e663adfc2c0940582f3c6a1441d6f8f",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/app.js",
+    "bytes": 4143,
+    "sha256": "b6009907c293f99e90c799a7d87569834f7c08d42f792f63cda0ad9bafd4aaa5",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/assets/brand-sculpture.webp",
+    "bytes": 163312,
+    "sha256": "9f9098e7fc99e87ce445635fcfbc911f705090169028fd354d5dd5795d921992",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/assets/cafe-concept.webp",
+    "bytes": 195554,
+    "sha256": "3a5469e4b3d6bea8eadeb015008457c61c98d9fcd2dd97717e136407ed4b9d4d",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/assets/clinic-concept.webp",
+    "bytes": 105374,
+    "sha256": "7481f486e534fc55158b0cc84d59aba3e6f1586b7b8ba9dbbc829b602c85d0dc",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/assets/hotel.webp",
+    "bytes": 300298,
+    "sha256": "0b6baf7af6f2063ef632108d6ea9e404b1e4c940147776ec554cd7066978b818",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/assets/sports-concept.webp",
+    "bytes": 222070,
+    "sha256": "7ea3d8310024acdce8be69f4414b8b3161893adfff2000a938673a4b6fabbdce",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/demo.css",
+    "bytes": 10071,
+    "sha256": "f43615504191474986a32fe51fd4a12f6e553f058b4d5b277a9b71ec3e79ef6d",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/demo.js",
+    "bytes": 18146,
+    "sha256": "4136eb12cb20d4aeb4136364cb1acb6e8944a74f1cdfcfdc5ffc7edd63cc808f",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/demo/cafe/index.html",
+    "bytes": 5187,
+    "sha256": "9d693df01966bf52c069da7b79539e9426fe38f99b9b3990e8d3ea4440809846",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/demo/clinic/index.html",
+    "bytes": 5125,
+    "sha256": "521e7a9d5acb511d136d4f533ce77fa2f7de010d541c83cb2804462a63e8a194",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/demo/hotel/index.html",
+    "bytes": 5106,
+    "sha256": "6f04eafe69ad3cd30ca5a2a204767e7134a658582aea2eba3d48a917f0cde141",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/demo/sports/index.html",
+    "bytes": 5150,
+    "sha256": "07115a6c385fb122992a42cc4e33fab88c1b679f826208bf5dc4e3268091cf55",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/expertise/search-visibility/index.html",
+    "bytes": 8477,
+    "sha256": "83c0af82b6fa07d9eccbff07daeed2b02945f51b3030a0559adb8bb19cc886c5",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/index.html",
+    "bytes": 21232,
+    "sha256": "5e7a2a3c8ca710f583331ed2a367d5572e22b3249b16f6caf4866e9a53ff56c7",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/international.css",
+    "bytes": 14439,
+    "sha256": "e020d211484b7055e251ea5368409846a61e5d42127662e2c14ceeed3722c913",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/international.js",
+    "bytes": 5753,
+    "sha256": "64f45c73fcf768e5a3cab29dd6bc482ae53d7782f75d047f237ee7fe7ef8fc2f",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/privacy/index.html",
+    "bytes": 5549,
+    "sha256": "b18233ca8cbc021ea6e463490bc54298403a924483b53e1b6fafa2344c3c0921",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/robots.txt",
+    "bytes": 92,
+    "sha256": "d5829b56b771720379ba0f8b1fe85bd812f4f4a49f8caa820d4dfdff777f7c86",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/sitemap.xml",
+    "bytes": 703,
+    "sha256": "04f5d731b430edc3f978d07222926f93d7fd0e2c55ad33beeb56bc8221224753",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/style.css",
+    "bytes": 24550,
+    "sha256": "16f22bf1a03ce8b656bfac4d277a15a833a8194c3b1f17969d51b32a013da207",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/upgrade.css",
+    "bytes": 5407,
+    "sha256": "e8e526a4461f6b55dc6d619c6e662fbd75ef808dabaeaecea298bf9f44293ffc",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/upgrade.js",
+    "bytes": 2172,
+    "sha256": "c2fc3f5cce2fa346ed54695c5d728cf0a75031b37225acd7c898ea03bf030517",
+    "kind": "source/asset"
+  },
+  {
+    "path": "public/work/aurelia-house/index.html",
+    "bytes": 10273,
+    "sha256": "721158e34d16205656a72418ec7d1c49f1ea4360fe0db211281527f4b978c4b8",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/work/cafe-workflow/index.html",
+    "bytes": 10495,
+    "sha256": "3cd3a828a18b9a5d8622d2bdf6c6db5acb04326341e2a4219b1b2b2aded31b29",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/work/sportshub/index.html",
+    "bytes": 10038,
+    "sha256": "0e24aa8e5012990dc9d98401238c63919322944c3655b2eec36f0f3b10d20a05",
+    "kind": "generated/export"
+  },
+  {
+    "path": "public/work/umar-clinic/index.html",
+    "bytes": 10675,
+    "sha256": "5200db5f8acc7b7c17ca9bdfb4d643db990fa9f91b71054539d4c756bc1fcc8f",
+    "kind": "generated/export"
+  },
+  {
+    "path": "scripts/build.mjs",
+    "bytes": 1304,
+    "sha256": "71c26088dd631518cf80a16ebe596fb3e77692e114ee76bf623ab276ddbacb4b",
+    "kind": "source/asset"
+  },
+  {
+    "path": "scripts/check-pages.py",
+    "bytes": 1609,
+    "sha256": "37fe3a893d063a7ea600e70c5b4bae0be3e31c2f6154aa949c1e0edccf380aa6",
+    "kind": "source/asset"
+  },
+  {
+    "path": "scripts/export-github.py",
+    "bytes": 4461,
+    "sha256": "a70a9a638156c02cff8c2a4b6df64d1c5c6ec68be95ae6a7ff47c32cd624e882",
+    "kind": "source/asset"
+  },
+  {
+    "path": "scripts/test.mjs",
+    "bytes": 11356,
+    "sha256": "271b3944c367d80518fe3b5eda11eb30d7688abee0f470d67458fc9b8e9f0d5d",
+    "kind": "source/asset"
+  },
+  {
+    "path": "vite.config.js",
+    "bytes": 1280,
+    "sha256": "efbc5a48df6cf2e942511d07e2e1fe280b00db88f5db6339e397a69a67f56663",
+    "kind": "source/asset"
+  },
+  {
+    "path": "worker/index.js",
+    "bytes": 7596,
+    "sha256": "4aa2692e718aa4a988cc389774539b4a8a5bd28484c361768f93b8c23b7e1c1f",
+    "kind": "source/asset"
+  },
+  {
+    "path": "worker/logic.js",
+    "bytes": 9085,
+    "sha256": "4b7254ed8d65a302807545a4e5c47d92a34bf9de2362988fc5ef7872a1313591",
+    "kind": "source/asset"
+  }
+]
