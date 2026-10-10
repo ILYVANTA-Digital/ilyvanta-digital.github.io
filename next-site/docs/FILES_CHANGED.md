@@ -1,6 +1,6 @@
 # Files changed — Phase 1
 
-Phase 1 is partially implemented, with browser acceptance pending. Phases 2–6 have no changes. This is a migration checkpoint, not a completed redesign.
+Phase 1 automated checks pass; hosted preview and full manual review remain pending. Phases 2–6 have no changes. This is a migration checkpoint, not a completed redesign.
 
 | File | Reason |
 | --- | --- |

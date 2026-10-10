@@ -7,6 +7,7 @@
 - Started GitHub Actions verification. A started workflow is not a passing result; Phase 1 acceptance remains pending.
 - Kept the existing root README and initial GitHub commit history intact.
 - Ran all three browser engines on GitHub: 43/60 passed, 17 contrast failures. Kept reveal text opaque, darkened muted labels, and added retained browser reports with responsive screenshots for recheck.
+- Recheck passed all 60 browser tests and 42 HTTP assertions, with lint/types/build/content checks passing. Reviewed responsive homepage screenshots. Hosted preview remains blocked by Vercel workspace permissions.
 
 ## 0.1.0 — Phase 1 foundation checkpoint, 9 October 2026
 

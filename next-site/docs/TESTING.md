@@ -1,6 +1,6 @@
 # Phase 1 verification — updated 10 October 2026
 
-## Status: PARTIALLY IMPLEMENTED / BROWSER FIXES AWAITING RECHECK
+## Status: AUTOMATED FOUNDATION CHECKS PASS / HOSTED PREVIEW BLOCKED
 
 The existing production Site has not been replaced. Phase 2 has not started.
 
@@ -13,8 +13,10 @@ Initial run: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/acti
 - Dependency install, lint, types, four content tests, build and 42 production HTTP assertions passed on GitHub.
 - All three browser engines installed and executed. 43 of 60 browser tests passed; 17 failed automated colour-contrast checks.
 - Nine-width overflow checks, keyboard menu, 404 recovery, reduced-motion and no-JavaScript checks passed in all three engines.
-- Low contrast affected muted labels and text during opacity-based scroll reveals. The fix keeps text fully opaque during transform animation and darkens the affected labels. It is awaiting a fresh browser run.
-- Browser screenshots and reports will be retained by CI for visual review. Automated tests and emulated viewports do not constitute physical-mobile testing.
+- Low contrast affected muted labels and text during opacity-based scroll reveals. The fix keeps text fully opaque during transform animation and darkens the affected labels.
+- Recheck at `fbf277dfdd8042e12f1d3facd328e0f9238da87a`: **60/60 browser tests passed**. Install, lint, types, content tests, production build and 42 HTTP checks also passed. Run: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/actions/runs/38046669559
+- CI retained nine full-page homepage screenshots across three widths and three engines. The 390px homepage was reviewed across all sections, with 768px and 1440px hero/contact/footer inspection. No clipping was seen in these inspected views. This is not a visual review of every work page.
+- Browser report artifact: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/actions/runs/38046669559/artifacts/11668100651 (seven-day retention). Automated tests and emulated viewports do not constitute physical-mobile testing.
 
 The local-environment results below are historical; remote browser execution has now resolved the browser-launch blocker.
 
@@ -65,6 +67,6 @@ Both production checks and Playwright own their local server lifecycle. Do not s
 
 ## Remaining Phase 1 acceptance
 
-Responsive layout, navigation, contrast, runtime and hydration behavior need successful browser evidence. Inspect screenshots at desktop, tablet and phone widths, and perform a keyboard review. Fix genuine failures before advancing to Phase 2.
+Automated responsive layout, navigation, contrast and runtime assertions now have passing browser evidence, together with the scoped screenshot review above. A hosted preview and manual review across all routes remain pending. The Vercel connector returns a workspace authorization error. Physical-device verification and Lighthouse measurements have not been performed. Complete preview review before marking the entire phase accepted or merging.
 
 The foundation still uses a documented HTML compatibility adapter, raw legacy image markup and legacy enhancement scripts. Native React sections and Next image migration remain pending. A finished redesign, functional lead database, email delivery, AI assistant, new 3D engine, analytics, Search Console ranking gains and Vercel deployment are not claimed. The draft remote PR exists; preview deployment is separately blocked by Vercel workspace authorization.

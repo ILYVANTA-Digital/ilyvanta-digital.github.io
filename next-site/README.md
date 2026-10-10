@@ -38,7 +38,7 @@ Remote branch: `feature/next-foundation` in `ILYVANTA-Digital/ilyvanta-digital.g
 
 ## Verification status
 
-Install, lint, types, four content tests, production build and 42 HTTP assertions passed locally and in GitHub Actions. The initial remote browser run passed 43/60 tests, with 17 contrast failures. Readability fixes are awaiting recheck; see docs/TESTING.md. Phase 2 remains gated. Vercel preview access is separately blocked by workspace authorization.
+Install, lint, types, four content tests, production build and 42 HTTP assertions passed locally and in GitHub Actions. Readability fixes resolved the initial 17 contrast failures: all 60 browser tests now pass on commit `fbf277dfdd8042e12f1d3facd328e0f9238da87a`. Responsive homepage screenshots were inspected; see docs/TESTING.md for scope. Phase 2 remains gated on full Phase 1 review. Vercel hosted preview access is blocked by workspace authorization.
 
 ## Importing the legacy content
 
