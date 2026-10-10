@@ -1,0 +1,25 @@
+{
+  "preserved": [
+    "/expertise/search-visibility/",
+    "/",
+    "/privacy/",
+    "/work/aurelia-house/",
+    "/work/cafe-workflow/",
+    "/work/sportshub/",
+    "/work/umar-clinic/"
+  ],
+  "redirectedDemos": {
+    "/demo/hotel/": "https://ilyvanta-digital.umarilyas.chatgpt.site/demo/hotel/",
+    "/demo/clinic/": "https://ilyvanta-digital.umarilyas.chatgpt.site/demo/clinic/",
+    "/demo/cafe/": "https://ilyvanta-digital.umarilyas.chatgpt.site/demo/cafe/",
+    "/demo/sports/": "https://ilyvanta-digital.umarilyas.chatgpt.site/demo/sports/"
+  },
+  "notFound": "unknown routes return custom 404",
+  "assets": [
+    "assets/brand-sculpture.webp",
+    "assets/sports-concept.webp",
+    "assets/cafe-concept.webp",
+    "assets/hotel.webp",
+    "assets/clinic-concept.webp"
+  ]
+}
