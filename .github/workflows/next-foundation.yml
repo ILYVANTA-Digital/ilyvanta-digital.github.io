@@ -1,4 +1,4 @@
-name: Next.js foundation
+name: Next.js agency checks
 on:
   pull_request:
   push:
@@ -8,7 +8,20 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: disposable-ci-password
+          POSTGRES_DB: ilyvanta_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     defaults:
       run:
         working-directory: next-site
@@ -25,6 +38,9 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
+      - run: npm run test:database
+        env:
+          TEST_DATABASE_URL: postgresql://postgres:disposable-ci-password@localhost:5432/ilyvanta_test
       - run: npm run build
       - run: npm run test:production
       - run: npx playwright install --with-deps chromium firefox webkit
@@ -33,7 +49,7 @@ jobs:
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: foundation-browser-report
+          name: agency-browser-report
           path: |
             next-site/playwright-report/
             next-site/test-results/

@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "hospitality",
+    "name": "Hospitality",
+    "headline": "Connect the guest journey with the work behind it.",
+    "description": "Hospitality website and workflow planning for clearer room discovery, inquiries and reception handoffs.",
+    "situation": "A beautiful room page helps discovery, but guests also need clear availability, policies and a dependable next step.",
+    "plan": [
+      "Clarify room information, amenities and booking or inquiry paths.",
+      "Map how a confirmed reservation reaches reception and who updates its status.",
+      "Separate real availability from inquiry-only experiences so guests never see a false promise."
+    ],
+    "questions": [
+      "Which system owns inventory?",
+      "Who confirms a booking and handles changes?",
+      "How do reception and housekeeping share room status?"
+    ],
+    "boundary": "Booking engines, OTAs, payment providers and cancellation rules must be agreed before a live integration.",
+    "project": "aurelia-house",
+    "service": "web-design-development"
+  },
+  {
+    "slug": "restaurants",
+    "name": "Restaurants & cafés",
+    "headline": "Clearer orders. Calmer service.",
+    "description": "Restaurant ordering and staff workflows built around accurate menus, confirmation and preparation handoffs.",
+    "situation": "Menus, incoming questions and preparation queues often live in different places. Missing details turn into delays at the counter.",
+    "plan": [
+      "Establish one accurate menu with availability and pricing rules.",
+      "Collect necessary delivery or collection details before confirmation.",
+      "Define who approves exceptions and how orders reach the preparation queue."
+    ],
+    "questions": [
+      "Where are menu prices maintained?",
+      "What counts as a confirmed order?",
+      "Which exceptions require staff approval?"
+    ],
+    "boundary": "Food orders, delivery promises and payments require reliable provider integrations. An AI response alone is never an order confirmation.",
+    "project": "cafe-workflow",
+    "service": "ai-automation"
+  },
+  {
+    "slug": "healthcare",
+    "name": "Clinic operations",
+    "headline": "Give reception a shared view of the day.",
+    "description": "Reception workflow planning for patient lookup, visit queues and payment records with clear privacy boundaries.",
+    "situation": "A returning visit should not mean re-entering the same record. Reception needs a practical view without exposing unnecessary information.",
+    "plan": [
+      "Map patient identification separately from visits and payments.",
+      "Define staff permissions and the minimum information each task requires.",
+      "Agree on privacy, retention, backups and access review before using real data."
+    ],
+    "questions": [
+      "Which roles can view or change each record?",
+      "What data is genuinely needed at reception?",
+      "How will backups and access be checked?"
+    ],
+    "boundary": "Clinical decisions, regulated health records and compliance certification are outside this reception concept. Real deployment requires a separate security and privacy review.",
+    "project": "umar-clinic",
+    "service": "custom-business-software"
+  },
+  {
+    "slug": "professional-services",
+    "name": "Professional services",
+    "headline": "Turn expertise into a clear reason to get in touch.",
+    "description": "Service websites and inquiry workflows that help buyers understand expertise, scope and the next step.",
+    "situation": "A referral may bring someone to your website, but the site still needs to explain whether you solve their particular problem.",
+    "plan": [
+      "Organize pages around buyer needs, deliverables and evidence.",
+      "Explain your process and the information needed for a useful first discussion.",
+      "Qualify inquiries without forcing visitors through a long sales funnel."
+    ],
+    "questions": [
+      "What makes an inquiry a good fit?",
+      "Which questions repeat before a project starts?",
+      "What evidence can you publish with permission?"
+    ],
+    "boundary": "Credentials, client names and results are included only when verified and approved for publication.",
+    "project": "aurelia-house",
+    "service": "seo-ai-search"
+  },
+  {
+    "slug": "startups",
+    "name": "Startups & product teams",
+    "headline": "Build the smallest useful version with a path forward.",
+    "description": "Focused product planning, web experiences and internal tools for testing an early business workflow.",
+    "situation": "An early product needs to prove a useful workflow before a large feature list becomes expensive to maintain.",
+    "plan": [
+      "Choose one audience, one problem and a measurable completion event.",
+      "Prototype the riskiest interaction using realistic but non-sensitive sample data.",
+      "Document what is experimental, what is ready and what needs validation before launch."
+    ],
+    "questions": [
+      "Which assumption needs evidence first?",
+      "What is essential for the first complete workflow?",
+      "Who owns the product after handover?"
+    ],
+    "boundary": "A prototype is not automatically ready for customer data, payment processing or scale. Launch gates are explicit.",
+    "project": "sportshub",
+    "service": "custom-business-software"
+  }
+]

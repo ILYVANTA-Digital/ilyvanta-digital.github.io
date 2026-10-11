@@ -1,0 +1,174 @@
+[
+  {
+    "slug": "aurelia-house",
+    "name": "Aurelia House",
+    "category": "Hospitality · Web application",
+    "headline": "A better stay starts behind the scenes.",
+    "description": "A hotel website and operations concept connecting reservations, guest services and room readiness.",
+    "image": "/assets/hotel.webp",
+    "alt": "Aurelia House hospitality concept artwork with an architectural hotel setting",
+    "demo": "hotel",
+    "audience": "Guests & reception",
+    "stack": "JavaScript · Cloudflare Worker · D1",
+    "original": "Web application concept",
+    "challenge": "Reception needs more than a booking calendar. Room readiness, unpaid balances and guest requests all affect whether the next stay can begin smoothly.",
+    "research": "The concept maps the guest and reception journeys against the same reservation. This is a workflow exploration, not documented interviews with a hotel client.",
+    "goals": [
+      "Reject overlapping room reservations",
+      "Keep guest requests and balances beside the stay",
+      "Connect checkout to housekeeping readiness"
+    ],
+    "architecture": "A browser interface sends reservation and operational actions to a Cloudflare Worker. D1 persists sample records within a separate viewer workspace.",
+    "ux": "The room, reservation and balance remain visible together. Status labels use text as well as color, and checkout follows the outstanding-balance rules.",
+    "ui": "Warm hospitality imagery introduces the guest experience; compact tables and room-status cards support reception work.",
+    "steps": [
+      [
+        "Choose a stay",
+        "Select a room and valid dates. Conflicting sample reservations are rejected."
+      ],
+      [
+        "Manage the guest",
+        "Add breakfast or pickup and record a simulated payment beside the reservation."
+      ],
+      [
+        "Complete the stay",
+        "Check in, settle the balance, check out and mark the room ready after cleaning."
+      ]
+    ],
+    "exercise": "Reserve room 202, record a sample payment, check in, check out, then complete housekeeping.",
+    "tests": "The hosted sample was covered by the previous demo regression suite for reservation rules, workflow actions, persistence and viewer isolation. This Next.js release links to that separate sample.",
+    "limits": "No live room inventory, OTA connection, payment gateway, transport provider or staff authentication. It is not a production hotel system.",
+    "lesson": "A room being unoccupied is not the same as a room being ready. Modeling the handoff makes that difference visible.",
+    "next": "Validate the workflow with reception staff, then scope authentication, live inventory and operational audit logs.",
+    "metrics": "Booking completion, unpaid balances and time from checkout to room ready."
+  },
+  {
+    "slug": "umar-clinic",
+    "name": "Umar Clinic",
+    "category": "Healthcare · Business software",
+    "headline": "Less desk work. More room for care.",
+    "description": "A reception workflow concept for returning patients, visit queues, payment records and printable slips.",
+    "image": "/assets/clinic-concept.webp",
+    "alt": "Umar Clinic reception software concept artwork",
+    "demo": "clinic",
+    "audience": "Reception & administrators",
+    "stack": "Original: PHP · SQLite / Hosted sample: JavaScript · D1",
+    "original": "Local application + hosted sample",
+    "challenge": "Returning patients, today’s queue and payment reconciliation need to stay connected without staff repeatedly creating the same record.",
+    "research": "The workflow separates a stable patient record from each visit and payment. It is a reception prototype, not clinical research or an evaluated medical product.",
+    "goals": [
+      "Link repeat visits to a stable sample patient ID",
+      "Keep waiting and completed visits distinct",
+      "Record payments and refunds without losing their history"
+    ],
+    "architecture": "The original local application uses PHP and SQLite. The separate hosted browser sample uses a Worker API and D1 to demonstrate selected reception workflows.",
+    "ux": "Patient lookup comes before visit creation. Queue status and payment status remain separate so staff can see both without guessing.",
+    "ui": "Quiet teal accents, clear table headings and compact summaries keep the daily queue readable. Printable slips focus on the current sample visit.",
+    "steps": [
+      [
+        "Find the patient",
+        "Choose an existing fictional record or register a new sample patient."
+      ],
+      [
+        "Add the visit",
+        "Set the sample fee and add the visit to today’s queue."
+      ],
+      [
+        "Close the loop",
+        "Mark the visit complete, record payment or refund and print its sample slip."
+      ]
+    ],
+    "exercise": "Add a fictional patient, create a visit, record payment and print a sample slip.",
+    "tests": "The previous hosted-demo regression suite covered record creation, visit actions, payment rules and isolated sample workspaces. Public hosting of the original PHP application has not been certified.",
+    "limits": "Use fictional names only. No diagnoses, real patient data, clinical decisions or production access controls belong in this public sample. It is not an electronic health record.",
+    "lesson": "Visit status and payment status solve different questions; combining them hides work reception still needs to do.",
+    "next": "Review data access, retention, backups, permissions and deployment security before considering a real clinic installation.",
+    "metrics": "Reception entry time, queue clarity and reconciliation of unpaid sample fees."
+  },
+  {
+    "slug": "cafe-workflow",
+    "name": "Café Order Workflow",
+    "category": "Automation · Conversational ordering",
+    "headline": "From a conversation to a clear order.",
+    "description": "An ordering and staff-queue prototype with exact menu totals, explicit confirmation and approval rules.",
+    "image": "/assets/cafe-concept.webp",
+    "alt": "Café ordering concept artwork with a warm hospitality visual identity",
+    "demo": "cafe",
+    "audience": "Customers & café staff",
+    "stack": "Original: Node.js · Ollama · Whisper / Hosted sample: JavaScript · D1",
+    "original": "Prototype · self-directed",
+    "challenge": "Orders arriving in chat are often incomplete. Staff need confirmed items, quantities and delivery details before preparation begins.",
+    "research": "The prototype breaks ordering into menu selection, review, confirmation and preparation. The rules are explored with sample orders rather than reported client sales data.",
+    "goals": [
+      "Use exact menu prices and quantities",
+      "Require confirmation before an order enters the queue",
+      "Send oversized orders to staff approval"
+    ],
+    "architecture": "The hosted browser demo uses a deterministic menu and server-calculated totals with D1 persistence. The separate original WhatsApp Web prototype explored local AI and transcription.",
+    "ux": "An order review step separates discussion from commitment. Staff see a preparation queue instead of reconstructing an order from a long conversation.",
+    "ui": "Warm café imagery, a simple order summary and explicit status controls connect the customer view with preparation work.",
+    "steps": [
+      [
+        "Build an order",
+        "Choose items and quantities. The server calculates the sample total and delivery."
+      ],
+      [
+        "Confirm once",
+        "Review the order; orders above 50 items require staff approval."
+      ],
+      [
+        "Follow preparation",
+        "Move the sample order from received to preparing, ready and completed."
+      ]
+    ],
+    "exercise": "Add two espresso, confirm the order and move it through the staff queue.",
+    "tests": "The previous hosted-demo regression suite exercised menu totals, order validation and status changes. AI, WhatsApp and transcription integrations are not active in the public browser sample.",
+    "limits": "The demo does not send WhatsApp messages, call AI or transcribe voice. Original item matching, Urdu parsing, cancellation and reliable staff delivery still need work.",
+    "lesson": "A model should not invent prices or skip confirmation. Deterministic ordering rules are the foundation for a safer assistant.",
+    "next": "Repair the original parser, evaluate an official messaging integration and test human handoff before any public bot launch.",
+    "metrics": "Order correction rate, time to confirmation and preparation handoff time."
+  },
+  {
+    "slug": "sportshub",
+    "name": "SportsHub",
+    "category": "Community · Commerce",
+    "headline": "A place to play, connect and shop.",
+    "description": "A sports platform concept pairing event participation with a simple catalog, basket and sample checkout.",
+    "image": "/assets/sports-concept.webp",
+    "alt": "SportsHub sports and commerce concept artwork",
+    "demo": "sports",
+    "audience": "Players & store operators",
+    "stack": "Original: PHP · MySQL / Hosted sample: JavaScript · D1",
+    "original": "Development build + hosted sample",
+    "challenge": "Players need to discover sessions and participate easily, while store operators need clear orders and reliable availability.",
+    "research": "The concept follows event discovery and shopping as separate journeys with shared navigation. No community growth or sales lift has been measured.",
+    "goals": [
+      "Make joining and leaving an event clear",
+      "Show basket quantities and totals before confirmation",
+      "Validate sample stock before recording an order"
+    ],
+    "architecture": "The original platform uses PHP and MySQL. The hosted sample independently demonstrates events, basket actions and inventory-aware sample orders through a Worker and D1.",
+    "ux": "Events and commerce have clear entry points. A sample order reference closes the checkout flow, while stock validation prevents an unavailable purchase.",
+    "ui": "Sport-led imagery introduces the community; product cards, totals and readable action states keep the commerce flow practical.",
+    "steps": [
+      [
+        "Find a session",
+        "Explore sample events and join or leave in your viewer workspace."
+      ],
+      [
+        "Build a basket",
+        "Add available products, change quantities and review the total."
+      ],
+      [
+        "Place a sample order",
+        "Confirm a simulated checkout, receive a reference and see stock update."
+      ]
+    ],
+    "exercise": "Join an event, add a football to your basket and place a sample order.",
+    "tests": "The previous hosted-demo regression suite covered event participation, baskets, stock validation and order persistence. Full runtime and security testing of the original PHP platform remains outstanding.",
+    "limits": "No real payments, shipping, event admission or community messaging. The original PHP checkout binding defect and administrative request protection require fixes before release.",
+    "lesson": "Participation and purchasing share an audience but have different failure cases. Each needs its own clear completion state.",
+    "next": "Resolve original checkout and administrative security defects, then validate authorization and real payment-provider behavior in staging.",
+    "metrics": "Event participation, basket completion and stock accuracy."
+  }
+]
