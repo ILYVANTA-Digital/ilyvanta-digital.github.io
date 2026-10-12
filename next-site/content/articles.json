@@ -1,0 +1,150 @@
+[
+  {
+    "slug": "website-or-business-software",
+    "title": "A website or custom software: what does your business need?",
+    "category": "Business software",
+    "description": "Compare a public website, an internal tool and an integration before choosing what your business should build next.",
+    "summary": "Choose a website when customers need clearer information and an easy next step. Consider software when people need to manage records and complete an operational workflow. Some businesses need both, but the first release should solve one complete problem.",
+    "image": "/assets/clinic-concept.webp",
+    "service": "custom-business-software",
+    "sections": [
+      {
+        "heading": "Start with the person doing the work",
+        "paragraphs": [
+          "Write down one task from start to finish. A prospective guest finding room information is a different journey from reception changing a reservation. The first needs clear public content; the second needs records, permissions and reliable state changes.",
+          "Use the hotel sample in our work collection to separate these journeys. It is a demonstration of the interaction, not proof that a live booking integration or payment process has been delivered."
+        ]
+      },
+      {
+        "heading": "Compare three realistic options",
+        "paragraphs": [
+          "A service website can explain an offer, provide evidence and collect an inquiry. It does not automatically replace the tools that staff use after that inquiry arrives.",
+          "An integration connects existing systems when the workflow is already understood. Confirm API availability, account permissions and what should happen if one system stops responding.",
+          "Custom software makes sense when the underlying rules are distinctive enough to justify owning a system. Budget for maintenance, backups, access reviews and user support as well as initial development."
+        ]
+      },
+      {
+        "heading": "Write acceptance criteria before comparing prices",
+        "paragraphs": [
+          "For a website: a visitor can find a relevant service, evaluate an example and submit a brief or contact the business directly. For an internal tool: the right staff member can find a record, make an authorized change and confirm what happened.",
+          "Include failure cases. What if an email is delayed, two people update the same record or an import contains duplicates? A proposal that names these cases is easier to compare with another proposal."
+        ]
+      },
+      {
+        "heading": "Start with one complete release",
+        "paragraphs": [
+          "Choose the smallest useful journey that reaches a real outcome. Avoid releasing several impressive screens whose underlying records are disconnected.",
+          "Before approving the next phase, ask the intended user to complete the task without coaching. Record where they hesitate and which information is missing. Use that evidence to prioritize the next change."
+        ]
+      }
+    ],
+    "checklist": [
+      "Who uses this: a customer, staff member or both?",
+      "What record or decision must be correct?",
+      "Can an existing tool handle the job?",
+      "Who will operate and maintain the result?"
+    ],
+    "sources": []
+  },
+  {
+    "slug": "plan-a-business-automation",
+    "title": "How to choose your first business automation",
+    "category": "AI & automation",
+    "description": "A practical way to choose an automation task, define human review and measure useful outcomes before expanding the workflow.",
+    "summary": "Start with a frequent, well-understood task whose mistakes are easy to detect and correct. Define the input, expected output, exception path and human owner before deciding whether AI is needed.",
+    "image": "/assets/cafe-concept.webp",
+    "service": "ai-automation",
+    "sections": [
+      {
+        "heading": "Choose a repeated problem, not a technology",
+        "paragraphs": [
+          "List tasks your team repeats in a normal week: copying an inquiry, classifying a request or assembling a draft response. Estimate the effort using a small observed sample rather than a guess presented as a business result.",
+          "A deterministic rule may be enough for routing a form by service. A language model may help interpret free text, but it also needs examples, evaluation and a plan for uncertain answers."
+        ]
+      },
+      {
+        "heading": "Keep the first task reversible",
+        "paragraphs": [
+          "Drafting an internal summary for review is a safer first experiment than automatically changing a customer booking. The owner should be able to compare the result with its source and correct it.",
+          "In our cafe concept, a staff queue makes the preparation handoff visible. A real automation around that workflow would still need agreed rules for menu changes, duplicate orders and failed messages. The sample does not establish production reliability."
+        ]
+      },
+      {
+        "heading": "Define the exception path",
+        "paragraphs": [
+          "Write down what happens when the input is incomplete, a connected service is unavailable or the system cannot answer from approved information. A visible handoff is more useful than silently producing an answer.",
+          "Assign a person to review failures. Retrying an operation should not create duplicate records or send repeated customer messages. Keep any stored logs limited to the information needed to investigate the failure."
+        ]
+      },
+      {
+        "heading": "Evaluate before expanding",
+        "paragraphs": [
+          "Use representative fictional examples, including difficult and out-of-scope requests. Compare the result against a written expected behavior and count corrections.",
+          "Measure useful completions, review effort and provider cost per task. Only expand to more tasks after the first workflow performs acceptably against the agreed criteria. Time saved is a result to measure, not an assumption to promise."
+        ]
+      }
+    ],
+    "checklist": [
+      "What task repeats often enough to matter?",
+      "Can rules solve it without a model?",
+      "Who reviews uncertain or consequential outputs?",
+      "How are failures, costs and corrections recorded?"
+    ],
+    "sources": []
+  },
+  {
+    "slug": "seo-aeo-geo-explained",
+    "title": "SEO, AEO and GEO: a practical guide for business owners",
+    "category": "SEO & AI search",
+    "description": "Understand SEO, AEO and GEO, the website improvements they share, and why clear evidence matters more than ranking promises.",
+    "summary": "SEO helps people discover your pages in search. AEO describes answering their questions clearly. GEO describes efforts to make source content useful to generative search systems. The terms overlap; the work starts with accessible pages and reliable information.",
+    "image": "/assets/brand-sculpture.webp",
+    "service": "seo-ai-search",
+    "sections": [
+      {
+        "heading": "Make each service understandable",
+        "paragraphs": [
+          "Give each important service a clear purpose: who it helps, what problem it addresses, what the scope includes and what evidence a buyer can inspect. Connect it to a relevant case study and a way to make contact.",
+          "Avoid creating almost identical pages for countries where the business has no distinct offering or evidence. International availability can be explained honestly without inventing offices or completed engagements."
+        ]
+      },
+      {
+        "heading": "Answer the question before adding detail",
+        "paragraphs": [
+          "A buyer asking about cost needs to know which parts of the scope affect it. Start with that answer, then explain the inputs needed for a quotation. A buyer asking about timing needs dependencies and review points, not an invented universal delivery date.",
+          "Use descriptive headings and visible text. Keep the important explanation accessible without requiring someone to operate a canvas, animation or chatbot."
+        ]
+      },
+      {
+        "heading": "Connect claims to evidence",
+        "paragraphs": [
+          "Distinguish a concept from client work, proposed metrics from measured results, and an interactive sample from a live production system. Describe limitations where the reader is evaluating the example.",
+          "Keep the studio name, author identity and contact details consistent. Structured data should describe the content people can actually see, rather than adding credentials or achievements missing from the page."
+        ]
+      },
+      {
+        "heading": "Separate implementation from discovery results",
+        "paragraphs": [
+          "A valid sitemap or a clean build is implementation evidence. Search impressions, relevant inquiries and citations are outcomes that need observation after the correct production property is connected.",
+          "No agency can control whether a search engine or an AI service selects a page. Google\u2019s guidance connects generative search visibility with established search quality practices; it does not make a markup tag or plugin a guarantee."
+        ]
+      }
+    ],
+    "checklist": [
+      "Does each service page answer a distinct buyer question?",
+      "Can a visitor inspect the evidence behind a claim?",
+      "Are public pages crawlable on the final domain?",
+      "Are search observations recorded separately from promises?"
+    ],
+    "sources": [
+      {
+        "label": "Google Search Central: AI features and your website",
+        "url": "https://developers.google.com/search/docs/appearance/ai-features"
+      },
+      {
+        "label": "Google Search Central: structured data guidelines",
+        "url": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies"
+      }
+    ]
+  }
+]

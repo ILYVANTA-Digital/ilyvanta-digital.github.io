@@ -102,3 +102,57 @@ Phase 1 automated checks pass; hosted preview and full manual review remain pend
 - `next-site/scripts/migrate.mjs` — Repeatable production, browser and database verification or operations.
 - `next-site/scripts/retry-email.ts` — Repeatable production, browser and database verification or operations.
 - `next-site/tsconfig.json` — Dependencies, safe environment template or tooling configuration.
+
+## 12 October 2026 — implementation continuation
+
+Paths are relative to repository root. These commits remain local; see deployment notes for the remote-write and dashboard limitations.
+
+### Phase 5 — SEO/AEO/content (`8272b6d`)
+
+| File | Reason |
+| --- | --- |
+| `next-site/app/[[...slug]]/page.tsx` | Render new guides and use article Open Graph types. |
+| `next-site/app/studio.css` | Style native FAQ disclosures, guides and consent controls responsively. |
+| `next-site/components/content-pages.tsx` | Add service FAQs, guide links and accurate analytics privacy content. |
+| `next-site/components/insight-article.tsx` | Render guide summary, contents, author, checklist and related service. |
+| `next-site/components/service-faq.tsx` | Render service-specific answers using no-JS HTML details. |
+| `next-site/components/structured-data.tsx` | Link founder/studio/site entities and add Article plus full registered breadcrumbs. |
+| `next-site/content/articles.json` | Add three useful business planning/search guides with explicit evidence limits. |
+| `next-site/content/pages.json` | Register unique metadata and canonical routes for the new guides. |
+| `next-site/content/service-faqs.json` | Add 18 buyer questions across six services. |
+| `next-site/docs/PHASE_5.md` | Record Phase 5 work, verification and unresolved external acceptance. |
+| `next-site/docs/SEO.md` | Document intent ownership, indexing cutover and evidence-based search measurement. |
+| `next-site/docs/TESTING.md` | Record exact passing Phase 2 remote SHA and later local-only evidence. |
+| `next-site/lib/site-policy.ts` | Validate canonical origin and prevent preview indexing through copied variables. |
+| `next-site/lib/site.ts` | Use centralized canonical/indexing policy. |
+| `next-site/scripts/check-production.mjs` | Verify new schemas, breadcrumb routes, headers and absence of active preview tracking. |
+| `next-site/scripts/foundation.test.mjs` | Update expected route count while retaining metadata/content contract checks. |
+| `next-site/scripts/seo.test.mjs` | Test canonical rejection, preview safeguards and content reachability. |
+
+### Phase 6 — security/analytics/Netlify preparation (`6ce45a0`)
+
+| File | Reason |
+| --- | --- |
+| `.gitignore` | Exclude Netlify account-link state. |
+| `netlify.toml` | Configure Next app base, validation/build, Node version and adapter detection. |
+| `next-site/.env.example` | Document inactive analytics flags without secrets. |
+| `next-site/.gitignore` | Exclude local Netlify state. |
+| `next-site/README.md` | Update route counts and exact completion boundary. |
+| `next-site/app/api/contact/route.ts` | Use verified-host origin and network selection helpers. |
+| `next-site/app/layout.tsx` | Render consent controls only for explicitly enabled production analytics. |
+| `next-site/app/studio.css` | Style native FAQ disclosures, guides and consent controls responsively. |
+| `next-site/components/analytics-consent.tsx` | Implement optional analytics opt-in, withdrawal, navigation and scoped conversion tracking. |
+| `next-site/components/contact-form.tsx` | Emit only fixed start/saved event names without form contents. |
+| `next-site/components/content-pages.tsx` | Add service FAQs, guide links and accurate analytics privacy content. |
+| `next-site/docs/CHANGELOG.md` | Record dated changes without claiming a deployment. |
+| `next-site/docs/CONTENT_GUIDE.md` | Explain safe editing, truthful claims and required review. |
+| `next-site/docs/DEPLOYMENT.md` | Document Netlify Free team, empty project, configuration and missing linking capability. |
+| `next-site/docs/PHASE_6.md` | Record Phase 6 scope, Netlify project and remaining launch gates. |
+| `next-site/docs/SECURITY.md` | Document controls, residual CSP risk and unconfigured operational monitoring. |
+| `next-site/docs/TESTING.md` | Record exact passing Phase 2 remote SHA and later local-only evidence. |
+| `next-site/e2e/search-security.spec.ts` | Add browser checks for no-JS answers, preview tracking and CSP hydration; execution pending. |
+| `next-site/lib/analytics-policy.ts` | Allow only known event names and registered paths; remove query and fragment. |
+| `next-site/lib/contact/network.ts` | Select provider-owned valid IP and exact allowed origins for contact protection. |
+| `next-site/next.config.ts` | Add CSP with explicit static Next inline-script limitation. |
+| `next-site/scripts/check-production.mjs` | Verify new schemas, breadcrumb routes, headers and absence of active preview tracking. |
+| `next-site/scripts/security.test.mjs` | Test spoofed origin/forwarding inputs and analytics privacy projection. |

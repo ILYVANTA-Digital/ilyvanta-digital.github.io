@@ -38,3 +38,9 @@ Copy the names from `.env.example` into the deployment environment. Never commit
 This repository's application root is `next-site/`. Work stays on feature branches and draft PRs. GitHub checks run builds, an isolated PostgreSQL service and Playwright Chromium/Firefox/WebKit. Those engines do not replace physical-device testing. The hosted Vercel preview is still blocked by the connected workspace's authorization; that does not prevent development or CI.
 
 No demo is a paid-client claim. The four existing interactive demos are hosted separately on the legacy Site. No real bookings, patient data or payments belong in those samples.
+
+## Current completion boundary (12 October 2026)
+
+Latest local SEO/security work adds 29 content routes, buyer answers, author/schema structure, consent-gated analytics support and Netlify configuration. Local build/lint/types, 15 tests and 950 production checks pass. See docs/PHASE_5.md and docs/PHASE_6.md for the exact files, evidence and limitations. The last remote browser pass applies to Phase 2, not these new changes. AI, real contact delivery, monitoring, new browser/Lighthouse results and production deployment remain pending.
+
+Netlify project: https://app.netlify.com/projects/ilyvanta-digital — created but empty; a project is not a deployed website. No paid plan or DNS change.

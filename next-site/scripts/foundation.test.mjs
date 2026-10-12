@@ -12,7 +12,7 @@ test("legacy URLs are preserved and all native routes have unique concise metada
       pages.some((p) => p.path === old.path),
       old.path,
     );
-  assert.equal(pages.length, 26);
+  assert.equal(pages.length, 29);
   assert.equal(new Set(pages.map((p) => p.path)).size, pages.length);
   assert.equal(new Set(pages.map((p) => p.title)).size, pages.length);
   assert.equal(new Set(pages.map((p) => p.description)).size, pages.length);

@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { announceConversion } from "@/lib/analytics-policy";
 import { budgets, serviceOptions } from "@/lib/contact/options";
 export function ContactForm({ enabled }: { enabled: boolean }) {
   const form = useRef<HTMLFormElement>(null);
+  const started = useRef(false);
   const status = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
@@ -45,6 +47,7 @@ export function ContactForm({ enabled }: { enabled: boolean }) {
       setMessage(result.message || "Please contact the studio by email.");
       if (response.ok) {
         setSent(true);
+        if (response.status === 201) announceConversion("contact_submitted");
       } else {
         setErrors(result.fields || {});
       }
@@ -64,6 +67,12 @@ export function ContactForm({ enabled }: { enabled: boolean }) {
       action="/api/contact/"
       method="post"
       onSubmit={submit}
+      onFocus={() => {
+        if (!started.current) {
+          started.current = true;
+          announceConversion("contact_started");
+        }
+      }}
       aria-label="Project inquiry"
     >
       {!enabled && (

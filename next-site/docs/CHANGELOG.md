@@ -19,3 +19,12 @@
 - Added lint, typecheck, content tests, built-server HTTP checks and a three-engine Playwright/axe suite.
 - Added CI definition and migration/deployment documentation.
 - Browser execution remains blocked in the current environment; see TESTING.md. No production cutover or remote GitHub write occurred.
+
+## 12 October 2026 — local SEO/security and Netlify preparation
+
+- Added three focused business guides and 18 service questions; strengthened entity, article and breadcrumb metadata.
+- Protected previews from accidental indexing and validated canonical origins.
+- Added CSP, Netlify-aware contact network/origin handling and privacy-aware analytics consent support (inactive by default).
+- Added Netlify build configuration and created the empty project in the owner's Free team.
+- Latest local validation: 15 unit/content/security tests and 950 production assertions pass; runtime npm audit reports zero known vulnerabilities.
+- These changes are not deployed. Provider connections and new browser/performance checks remain open.

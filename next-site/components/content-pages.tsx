@@ -1,4 +1,6 @@
 import Image from "next/image";
+import articles from "@/content/articles.json";
+import { ServiceFAQ } from "./service-faq";
 import Link from "next/link";
 import services from "@/content/services.json";
 import projects from "@/content/projects.json";
@@ -192,6 +194,7 @@ export function ServicePage({ service: s }: { service: (typeof services)[number]
           <ProjectCard project={p} index={projects.indexOf(p)} />
         </div>
       </section>
+      <ServiceFAQ slug={s.slug} />
       <ProjectCTA />
     </>
   );
@@ -422,6 +425,16 @@ export function InsightsPage() {
             Read the guide ↗
           </Link>
         </article>
+        {articles.map((a) => (
+          <article className="article-card" key={a.slug}>
+            <span className="eyebrow">{a.category} · BY UMAR ILYAS</span>
+            <h2>{a.title}</h2>
+            <p>{a.summary}</p>
+            <Link className="text-link" href={`/insights/${a.slug}/`}>
+              Read the guide ↗
+            </Link>
+          </article>
+        ))}
       </section>
     </>
   );
@@ -580,9 +593,13 @@ export function PrivacyPage() {
         </p>
         <h2>Analytics</h2>
         <p>
-          This development version does not load advertising pixels or Google Analytics. If
-          analytics is introduced, this notice and any required consent controls must be updated
-          before activation.
+          Optional Google Analytics, when enabled, loads only after you allow it. It measures page
+          visits and a limited set of service, project and inquiry actions. Our events exclude form
+          answers, email addresses, query strings and fragments. Google processes technical
+          connection data when analytics loads. Advertising features are disabled. You can decline
+          or withdraw through Analytics preferences; withdrawal stops future collection and does not
+          erase information already sent. The preference is stored in this browser. Preview builds
+          keep analytics off.
         </p>
         <h2>Your choices</h2>
         <p>
