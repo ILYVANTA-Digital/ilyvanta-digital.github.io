@@ -28,4 +28,10 @@ RISKS: No real email delivery has been verified. No production database or provi
 
 REMAINING: Browser/CI review; provider-backed form acceptance; Vercel preview authorization; actual-device review. Phase 3 3D, Phase 4 AI assistant, full Phase 5 discovery/analytics and Phase 6 launch remain open, in the requested order.
 
-NEXT TASK: Resolve any new production/browser failures, review screenshots, then enable and verify the real contact providers when authorized access is available. Do not claim a completed launch or proceed past an unmet phase acceptance gate.
+NEXT TASK: Resolve any new production/browser failures, review screenshots, then enable and verify the real contact providers when authorized access is available. Keep provider-dependent acceptance explicitly open while continuing independent phases in the requested order. Do not claim a completed launch.
+
+## Verification update — 12 October 2026
+
+Local production build and 591 production assertions pass. First remote run also passed all three real PostgreSQL integration tests, but 24/126 browser checks failed for the documented issues. Those issues are fixed in `b23cb85ad5bf9e034fdbe456bbad3a50933a548d`; rerun pending. Actual Resend delivery, a configured production/preview database, hosted Next.js preview and physical-device verification remain blocked/unavailable. Vercel scope access was rechecked and still returns 403.
+
+Second browser run: 135/138 passed. All twelve real demo navigation/workspace-load checks passed. The three remaining failures were Playwright text extraction from noscript; the test now checks that the no-JavaScript email link itself is visible and usable.

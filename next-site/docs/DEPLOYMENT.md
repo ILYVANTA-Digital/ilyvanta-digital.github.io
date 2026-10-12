@@ -18,3 +18,11 @@ No Vercel project, DNS change, paid resource or production database is created b
 ## Preview access check — 10 October 2026
 
 The authenticated Vercel account is `umarilyas803-2491`. Its default team scope returned `403: Not authorized` when listing the intended projects. No deploy was attempted. The Vercel CLI is not installed in this environment, so an existing CLI session could not supply a fallback. The connector needs valid access to the intended workspace before preview deployment can proceed; no credentials should be placed in chat.
+
+## Phase 2 update — 12 October 2026
+
+The native agency experience is now on `feature/core-experience`, stacked on `feature/next-foundation`, in draft PR #2: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/pull/2. It is not merged or deployed. Root Directory remains `next-site`.
+
+A fresh connector check for the intended team (`team_juxt3OzRcWDrKnmhiWrykzTQ`, scope `umarilyas803-2491`) again returned 403. The local Vercel CLI is unavailable. No alternate workspace, token or browser session was used to bypass the failed authorization. Repeated unchanged calls will not help; the authorized account connection must have access to this workspace, or the owner must import the intended repository through their own Vercel session.
+
+After access is resolved, create a preview from `feature/core-experience`, keep indexing disabled, configure a separate preview database and verified email sender, and complete CONTACT_OPERATIONS.md's live acceptance steps. Do not deploy `main` expecting the new application: it still contains the original repository state pending review/merge.

@@ -70,3 +70,18 @@ Both production checks and Playwright own their local server lifecycle. Do not s
 Automated responsive layout, navigation, contrast and runtime assertions now have passing browser evidence, together with the scoped screenshot review above. A hosted preview and manual review across all routes remain pending. The Vercel connector returns a workspace authorization error. Physical-device verification and Lighthouse measurements have not been performed. Complete preview review before marking the entire phase accepted or merging.
 
 The foundation still uses a documented HTML compatibility adapter, raw legacy image markup and legacy enhancement scripts. Native React sections and Next image migration remain pending. A finished redesign, functional lead database, email delivery, AI assistant, new 3D engine, analytics, Search Console ranking gains and Vercel deployment are not claimed. The draft remote PR exists; preview deployment is separately blocked by Vercel workspace authorization.
+
+## Phase 2 first run — 11 October 2026
+
+Commit: `13d9f768b481ab17e84dac603e3a61c46bd08352`.
+Run: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/actions/runs/38170849298
+
+Passed: lint, strict types, 9 content/contact tests, 3 real PostgreSQL integration tests, production build and 591 production HTTP/link/schema/API checks. PostgreSQL tests verify concurrent duplicate handling, atomic rate limits and durable outbox failure/retry using an intercepted email transport.
+
+Browser result: 102/126 passed. The 24 failures across three engines came from three implementation issues (RSC prefetch across external demo redirects, reduced-motion CSS specificity and localhost origin handling when bound to 0.0.0.0), plus one ambiguous no-JavaScript test locator. No automated accessibility violations or tested horizontal overflow were reported in that run.
+
+Fix commit: `b23cb85ad5bf9e034fdbe456bbad3a50933a548d`. Demo links now use normal document navigation; reduced-motion rules match the affected components; local origin checks cover the bind address while rejecting external origins; the no-JS assertion targets the form's own fallback. Screenshot capture scrolls lazy images into view and verifies they loaded. Twelve new browser checks follow all four real demo links and wait for the sample workspace to load.
+
+Visual review: first-run screenshots reviewed for the homepage, hotel study and contact page at 390px and 1440px (including 2x screenshots). Hero, form, headings and footer fit their layouts. Some initial full-page screenshots contained unloaded below-fold images because the screenshot had not scrolled to trigger lazy loading; capture now explicitly validates those images. This is browser emulation, not a physical-device test.
+
+Second run: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/actions/runs/38278936085 — 135/138 passed, including every live demo link and loaded sample dashboard. Remaining no-JS checks used a text matcher that excludes noscript content; changed to assert the actual fallback email link is visible.

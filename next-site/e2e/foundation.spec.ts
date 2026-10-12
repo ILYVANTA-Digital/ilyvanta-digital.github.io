@@ -123,8 +123,10 @@ test("mobile navigation, useful content and contact remain usable without JavaSc
     page.locator('main a[href="mailto:ilyvantadigital@gmail.com"]').first(),
   ).toBeVisible();
   await expect(
-    page.getByRole("form", { name: "Project inquiry" }).locator("noscript"),
-  ).toContainText("Please email your brief");
+    page
+      .getByRole("form", { name: "Project inquiry" })
+      .locator('noscript a[href="mailto:ilyvantadigital@gmail.com"]'),
+  ).toBeVisible();
   await context.close();
 });
 async function fillForm(page: import("@playwright/test").Page) {
