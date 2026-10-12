@@ -48,6 +48,13 @@ for (const width of [320, 360, 390, 430, 768, 1024, 1280, 1440, 1920]) {
         [390, 1440].includes(width) &&
         ["/", "/contact/", "/work/aurelia-house/"].includes(path)
       ) {
+        for (const img of await page.locator("main img").all()) {
+          await img.scrollIntoViewIfNeeded();
+          await expect
+            .poll(() => img.evaluate((el) => (el as HTMLImageElement).naturalWidth))
+            .toBeGreaterThan(0);
+        }
+        await page.evaluate(() => window.scrollTo(0, 0));
         await info.attach(`${path.replaceAll("/", "-")}-${width}`, {
           body: await page.screenshot({ fullPage: true }),
           contentType: "image/png",
@@ -115,7 +122,9 @@ test("mobile navigation, useful content and contact remain usable without JavaSc
   await expect(
     page.locator('main a[href="mailto:ilyvantadigital@gmail.com"]').first(),
   ).toBeVisible();
-  await expect(page.locator("noscript")).toContainText("Please email your brief");
+  await expect(
+    page.getByRole("form", { name: "Project inquiry" }).locator("noscript"),
+  ).toContainText("Please email your brief");
   await context.close();
 });
 async function fillForm(page: import("@playwright/test").Page) {
@@ -172,3 +181,22 @@ test("contact server-validation errors are announced and preserve the brief", as
     "A clearer service website and project inquiry flow.",
   );
 });
+
+for (const [project, demo, heading] of [
+  ["aurelia-house", "hotel", "Aurelia House"],
+  ["umar-clinic", "clinic", "Umar Clinic"],
+  ["cafe-workflow", "cafe", "Café Order Workflow"],
+  ["sportshub", "sports", "SportsHub"],
+]) {
+  test(`${demo}: project link opens the real hosted sample workspace`, async ({ page }) => {
+    await page.goto(`/work/${project}/`);
+    await page.getByRole("link", { name: "Open interactive sample" }).click();
+    await expect(page).toHaveURL(`https://ilyvanta-digital.umarilyas.chatgpt.site/demo/${demo}/`);
+    await expect(page.locator("main h1")).toHaveText(heading);
+    await expect(page.locator("#demo-surface")).toHaveAttribute("aria-busy", "false", {
+      timeout: 20000,
+    });
+    await expect(page.locator("#demo-surface")).not.toBeEmpty();
+    await expect(page.locator(".sample-notice")).toContainText("Fictional data only");
+  });
+}

@@ -29,9 +29,9 @@ export function ProjectCard({
           </h3>
           <p>{project.description}</p>
         </div>
-        <Link className="text-link" href={`/demo/${project.demo}/`}>
+        <a className="text-link" href={`/demo/${project.demo}/`}>
           Try sample demo <span aria-hidden="true">↗</span>
-        </Link>
+        </a>
       </div>
     </article>
   );

@@ -13,9 +13,9 @@ export function CaseStudy({ project: p }: { project: (typeof projects)[number] }
       <div className="wrap">
         <div className="case-actions">
           <span className="pill">Self-directed project · {p.original}</span>
-          <Link className="button dark" href={`/demo/${p.demo}/`}>
+          <a className="button dark" href={`/demo/${p.demo}/`}>
             Open interactive sample ↗
-          </Link>
+          </a>
         </div>
         <figure className="case-image">
           <Image src={p.image} alt={p.alt} fill sizes="(max-width: 1200px) 100vw, 1200px" />
@@ -95,9 +95,9 @@ export function CaseStudy({ project: p }: { project: (typeof projects)[number] }
               <h3>{p.exercise}</h3>
               <p>Hosted separately · sample data · no real transactions</p>
             </div>
-            <Link className="button dark" href={`/demo/${p.demo}/`}>
+            <a className="button dark" href={`/demo/${p.demo}/`}>
               Explore the dashboard ↗
-            </Link>
+            </a>
           </div>
         </div>
       </section>

@@ -1793,10 +1793,16 @@ figure {
   html {
     scroll-behavior: auto;
   }
-  *,
-  *::before,
-  *::after {
+  .button,
+  .problem-card,
+  .service-row,
+  .project-image img {
     transition: none;
     animation: none;
+  }
+  .button:hover,
+  .problem-card:hover,
+  .project-image:hover img {
+    transform: none;
   }
 }

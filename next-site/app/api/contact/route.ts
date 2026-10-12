@@ -14,7 +14,10 @@ export async function POST(request: Request) {
       process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined,
     ]);
     const requestUrl = new URL(request.url);
-    if (!process.env.VERCEL && ["localhost", "127.0.0.1"].includes(requestUrl.hostname)) {
+    if (
+      !process.env.VERCEL &&
+      ["localhost", "127.0.0.1", "0.0.0.0"].includes(requestUrl.hostname)
+    ) {
       allowed.add(`${requestUrl.protocol}//localhost:${requestUrl.port}`);
       allowed.add(`${requestUrl.protocol}//127.0.0.1:${requestUrl.port}`);
     }
