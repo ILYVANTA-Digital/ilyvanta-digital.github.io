@@ -99,6 +99,7 @@ export function HeroArt() {
         alt="Interwoven teal glass and brushed-metal sculpture representing connected systems"
         fill
         priority
+        fetchPriority="high"
         sizes="(max-width: 760px) 100vw, 55vw"
       />
       {requested && eligible && !failed && (

@@ -68,7 +68,7 @@ export default function SculptureScene({
     <Canvas
       frameloop="demand"
       dpr={[1, 1.5]}
-      camera={{ position: [0, 0, 5.8], fov: 42 }}
+      camera={{ position: [0, 0, 8.3], fov: 42 }}
       gl={{
         antialias: true,
         alpha: false,

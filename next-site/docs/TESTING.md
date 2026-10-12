@@ -1,6 +1,10 @@
-# Phase 1 verification — updated 10 October 2026
+# Verification history — latest results 12 October 2026
 
-## Status: AUTOMATED FOUNDATION CHECKS PASS / HOSTED PREVIEW BLOCKED
+## Current status
+
+Combined CI at `af6e4bf` passes 168/168 browser tests, lint/types, 15 unit tests, 3 PostgreSQL tests, build and 950 HTTP checks. Lighthouse measured mobile 94→93, desktop 100→100; see [MEASURED_QA.md](MEASURED_QA.md). Hosted Netlify preview remains blocked by a sign-in state error. Sections below are dated historical records, not current completion claims.
+
+## Historical foundation status
 
 The existing production Site has not been replaced. Phase 2 has not started.
 

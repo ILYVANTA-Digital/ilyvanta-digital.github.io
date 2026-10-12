@@ -84,7 +84,7 @@ test("mobile menu works by keyboard, Escape and route navigation", async ({ page
 });
 test("project navigation and custom 404 recovery work", async ({ page }) => {
   await page.goto("/");
-  await page.getByRole("link", { name: "Read Aurelia House project study" }).click();
+  await page.getByRole("link", { name: /Read Aurelia House project study/ }).click();
   await expect(page.locator("main h1")).toContainText("A better stay");
   expect((await page.goto("/missing-core-test/"))?.status()).toBe(404);
   await page.getByRole("link", { name: "Return to the studio" }).click();

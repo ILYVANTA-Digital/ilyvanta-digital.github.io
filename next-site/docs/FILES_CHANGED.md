@@ -1,6 +1,6 @@
 # Files changed — Phase 1
 
-Phase 1 automated checks pass; hosted preview and full manual review remain pending. Phases 2–6 have no changes. This is a migration checkpoint, not a completed redesign.
+Phase-grouped file inventory. Phases 2, 3, 5 and 6 implementation and CI evidence are recorded below; Phase 4 AI, hosted integration and final review remain incomplete.
 
 | File | Reason |
 | --- | --- |
@@ -105,7 +105,7 @@ Phase 1 automated checks pass; hosted preview and full manual review remain pend
 
 ## 12 October 2026 — implementation continuation
 
-Paths are relative to repository root. These commits remain local; see deployment notes for the remote-write and dashboard limitations.
+Paths are relative to repository root. These changes are uploaded in draft PR #3; see MEASURED_QA.md for exact verified commit and remaining dashboard limitations.
 
 ### Phase 5 — SEO/AEO/content (`8272b6d`)
 
@@ -150,9 +150,18 @@ Paths are relative to repository root. These commits remain local; see deploymen
 | `next-site/docs/PHASE_6.md` | Record Phase 6 scope, Netlify project and remaining launch gates. |
 | `next-site/docs/SECURITY.md` | Document controls, residual CSP risk and unconfigured operational monitoring. |
 | `next-site/docs/TESTING.md` | Record exact passing Phase 2 remote SHA and later local-only evidence. |
-| `next-site/e2e/search-security.spec.ts` | Add browser checks for no-JS answers, preview tracking and CSP hydration; execution pending. |
+| `next-site/e2e/search-security.spec.ts` | Add browser checks for no-JS answers, preview tracking and CSP hydration; passed in the 168-test CI run at af6e4bf. |
 | `next-site/lib/analytics-policy.ts` | Allow only known event names and registered paths; remove query and fragment. |
 | `next-site/lib/contact/network.ts` | Select provider-owned valid IP and exact allowed origins for contact protection. |
 | `next-site/next.config.ts` | Add CSP with explicit static Next inline-script limitation. |
 | `next-site/scripts/check-production.mjs` | Verify new schemas, breadcrumb routes, headers and absence of active preview tracking. |
 | `next-site/scripts/security.test.mjs` | Test spoofed origin/forwarding inputs and analytics privacy projection. |
+
+## Measured QA follow-up
+
+- components/hero-art.tsx: high resource fetch priority from Lighthouse finding.
+- components/navigation.tsx and components/project-card.tsx: accessible names include visible labels.
+- components/sculpture-scene.tsx: camera framing correction from actual screenshots.
+- e2e/foundation.spec.ts: retain project-link coverage with the corrected accessible name.
+- docs/MEASURED_QA.md: exact measured scores, artifacts, rendering evidence and limitations.
+- README.md and phase/testing/deployment records: replace stale local-only status with verified remote evidence.

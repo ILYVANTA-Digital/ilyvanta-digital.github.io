@@ -1,6 +1,6 @@
 # ILYVANTA Digital — Next.js agency website
 
-Native Next.js agency experience on `feature/core-experience`, stacked on the reviewed foundation branch. The public Site remains separate until a hosted preview and launch gates are reviewed.
+Native Next.js agency experience on `feature/experience-completion`, stacked on the reviewed foundation branch. The public Site remains separate until a hosted preview and launch gates are reviewed.
 
 ## Run (Node 24)
 
@@ -21,8 +21,8 @@ For manual production review: `npm run start -- --port 4173`.
 ## Structure
 
 - `app/`: App Router, metadata routes, contact API, custom error screens and responsive styles.
-- `content/`: 26 route records, six service scopes, five industry approaches and four detailed project studies. `legacy-pages.json` remains an audit snapshot, not rendered HTML.
-- `components/`: server-rendered page content; only navigation and inquiry form need client state.
+- `content/`: 29 route records, six service scopes, five industry approaches and four detailed project studies. `legacy-pages.json` remains an audit snapshot, not rendered HTML.
+- `components/`: server-rendered page content; interactive navigation, inquiry, optional 3D and analytics-consent controls use client state.
 - `lib/contact/`: Zod validation, bounded request parsing, PostgreSQL persistence, durable rate limiting and a transactional email outbox.
 - `db/001_leads.sql`: repeatable migration. No database is created automatically.
 - `scripts/` and `e2e/`: content, API, database, production-route and three-engine browser checks.
@@ -41,6 +41,6 @@ No demo is a paid-client claim. The four existing interactive demos are hosted s
 
 ## Current completion boundary (12 October 2026)
 
-Latest local SEO/security work adds 29 content routes, buyer answers, author/schema structure, consent-gated analytics support and Netlify configuration. Local build/lint/types, 15 tests and 950 production checks pass. See docs/PHASE_5.md and docs/PHASE_6.md for the exact files, evidence and limitations. The last remote browser pass applies to Phase 2, not these new changes. AI, real contact delivery, monitoring, new browser/Lighthouse results and production deployment remain pending.
+Latest uploaded SEO/security work adds 29 content routes, buyer answers, author/schema structure, consent-gated analytics support and Netlify configuration. Local build/lint/types, 15 tests and 950 production checks pass. See docs/PHASE_5.md and docs/PHASE_6.md for the exact files, evidence and limitations. Combined CI at af6e4bf passes 168/168 browser tests; measured Lighthouse and visual findings are in docs/MEASURED_QA.md. AI, real contact delivery, monitoring and production deployment remain pending.
 
 Netlify project: https://app.netlify.com/projects/ilyvanta-digital — created but empty; a project is not a deployed website. No paid plan or DNS change.
