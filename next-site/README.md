@@ -1,8 +1,8 @@
-# ILYVANTA Digital — Next.js migration
+# ILYVANTA Digital — Next.js agency website
 
-Phase 1 foundation. Production remains on the existing Site. See docs/LEGACY_AUDIT.md for confirmed findings and limitations.
+Native Next.js agency experience on `feature/core-experience`, stacked on the reviewed foundation branch. The public Site remains separate until a hosted preview and launch gates are reviewed.
 
-## Local commands (Node 22+)
+## Run (Node 24)
 
 ```bash
 npm ci
@@ -14,32 +14,27 @@ npm run build
 npm run test:production
 npx playwright install --with-deps chromium firefox webkit
 npm run test:e2e
-# Manual production review:
-npm run start -- --port 4173
 ```
+
+For manual production review: `npm run start -- --port 4173`.
 
 ## Structure
 
-- app/: App Router, metadata, errors and design-system CSS.
-- content/: reviewed legacy content snapshot, preserved during migration.
-- components/legacy-document.tsx: trusted-content SSR compatibility boundary.
-- public/: existing artwork and enhancement scripts.
-- scripts/: repeatable import and verification.
-- e2e/: browser, responsive, keyboard, no-JS and axe tests; playwright.config.ts runs three engines.
-- docs/: audit, inventory, routes, architecture, deployment and phase results.
+- `app/`: App Router, metadata routes, contact API, custom error screens and responsive styles.
+- `content/`: 26 route records, six service scopes, five industry approaches and four detailed project studies. `legacy-pages.json` remains an audit snapshot, not rendered HTML.
+- `components/`: server-rendered page content; only navigation and inquiry form need client state.
+- `lib/contact/`: Zod validation, bounded request parsing, PostgreSQL persistence, durable rate limiting and a transactional email outbox.
+- `db/001_leads.sql`: repeatable migration. No database is created automatically.
+- `scripts/` and `e2e/`: content, API, database, production-route and three-engine browser checks.
+- `docs/PHASE_2.md`: exact implementation, verification and remaining acceptance gates.
+- `docs/CONTACT_OPERATIONS.md`: safe provider setup, retry and retention instructions.
 
-## Environment
+## Configuration
 
-Use .env.example as a names-only template. SITE_URL controls canonicals; SITE_INDEXABLE defaults false to avoid indexing unfinished previews. No provider keys are configured. New database, email and AI work must fail safely until those dependencies are explicitly provisioned.
+Copy the names from `.env.example` into the deployment environment. Never commit credentials. Preview defaults to `SITE_INDEXABLE=false`; set the canonical `SITE_URL` and enable indexing only for a reviewed production deployment. The contact form is fail-closed until database, email, a rate-limit secret and `CONTACT_ENABLED=true` are present. Build and runtime environments must agree; rebuild after changing the enabled state.
 
 ## Workflow
 
-Remote branch: `feature/next-foundation` in `ILYVANTA-Digital/ilyvanta-digital.github.io`. Review: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/pull/1 (draft). The application lives in `next-site/`. The separate legacy Site checkout retains the original source; this GitHub repository contains the migration snapshot, not that checkout's full history. Do not merge or change the production domain until a preview is reviewed and all required gates pass.
+This repository's application root is `next-site/`. Work stays on feature branches and draft PRs. GitHub checks run builds, an isolated PostgreSQL service and Playwright Chromium/Firefox/WebKit. Those engines do not replace physical-device testing. The hosted Vercel preview is still blocked by the connected workspace's authorization; that does not prevent development or CI.
 
-## Verification status
-
-Install, lint, types, four content tests, production build and 42 HTTP assertions passed locally and in GitHub Actions. Readability fixes resolved the initial 17 contrast failures: all 60 browser tests now pass on commit `fbf277dfdd8042e12f1d3facd328e0f9238da87a`. Responsive homepage screenshots were inspected; see docs/TESTING.md for scope. Phase 2 remains gated on full Phase 1 review. Vercel hosted preview access is blocked by workspace authorization.
-
-## Importing the legacy content
-
-`python3 scripts/import-legacy.py` requires the full repository with the old `public/` directory alongside `next-site/`. It is not needed to build an extracted app-only checkpoint, which already contains the content snapshot and assets.
+No demo is a paid-client claim. The four existing interactive demos are hosted separately on the legacy Site. No real bookings, patient data or payments belong in those samples.

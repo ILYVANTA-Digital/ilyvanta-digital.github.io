@@ -1,23 +1,23 @@
 # Architecture and migration boundaries
 
-## Current target
+## Current implementation
 
-Next.js 16 App Router, React, strict TypeScript. Server-rendered content and native Metadata API. CSS design tokens plus a compatibility stylesheet preserve established layout. Native error and not-found pages. No Tailwind, GSAP, WebGL or AI dependency is installed without a concrete feature needing it.
+Next.js 16 App Router, React and strict TypeScript. The route registry in `content/pages.json` defines 26 pages and feeds metadata and sitemap generation. `app/[[...slug]]/page.tsx` resolves those records to native server components. Unknown routes return the custom 404. The previous raw-HTML adapter and enhancement scripts have been removed; `legacy-pages.json` remains an audit snapshot.
 
-`app/[[...slug]]/page.tsx` maps reviewed content routes to `content/legacy-pages.json`. `components/legacy-document.tsx` renders checked-in trusted HTML only. It accepts no request-provided HTML. This adapter is deliberately temporary: Phase 2 replaces sections with typed React components. Browser scripts still assume full document navigation; keep native anchors for these legacy routes.
+`app/studio.css` implements the responsive graphite/mint editorial system. `app/tokens.css` retains the named design primitives. Only navigation and the inquiry form are client components. Existing artwork is rendered through next/image, with priority restricted to the homepage hero. Links to the four separately hosted demos use ordinary document navigation so Next.js does not prefetch RSC payloads across the redirect.
 
-`app/tokens.css` defines colors, radii, spacing, motion and type scales. `app/foundation.css` adds accessible focus, narrow-screen fixes and no-JS content support. `app/layout.tsx` loads metadata and existing enhancement scripts after hydration.
+The existing `/demo/*/` redirects preserve public entry URLs and point to the separate Site deployment. The Next.js app neither owns nor trusts the demo session. Demo APIs/data are not migrated in this phase.
 
-The four `/demo/*/` paths redirect temporarily to the existing public application host. No D1 identity header or cookie is trusted by this new application. Original server and data remain unchanged.
+## Inquiry boundary
 
-## Planned inquiry boundary (Phase 2)
+Browser → Next.js Route Handler → bounded content-type/body parser → Zod → durable PostgreSQL quotas → transaction (lead + outbox) → safe response. Next.js `after()` attempts notification delivery; an operator retry command handles deferred outbox work. See CONTACT_OPERATIONS.md for limits and remaining launch requirements.
 
-Browser form → Next.js Route Handler → Zod validation → server-only PostgreSQL adapter → transactional email adapter → safe client response. Database and delivery credentials must be configured before a real successful submission can be claimed. Durable idempotency and abuse controls are required; memory-only limits do not suffice in serverless production.
+The browser receives no database or email credentials. Only static form-option constants are imported by the client; Zod, PostgreSQL and notification code remain on the server. Email text is plain text, and developer-owned JSON-LD is serialized with HTML delimiters escaped. No customer-provided HTML is rendered.
 
-## Later phases
+PostgreSQL enforces lead-id uniqueness, separates notification state from lead state and atomically increments rate-limit buckets. The outbox uses bounded attempts and stable provider idempotency keys. Preview form availability fails closed until explicitly configured. The default local origin handling accepts localhost and 127.0.0.1 on the server port, including a server bound to 0.0.0.0; arbitrary external origins are rejected.
 
-3: capability-gated, lazy hero 3D with static fallback. 4: grounded server-only AI with budget controls and human handoff. 5: useful service/insight content, Search Console and consent-aware analytics. 6: hardened CSP, CI, real provider QA, preview review and explicit production approval/cutover.
+## State of later phases
 
-## Navigation plan
+3: full capability-gated lazy hero 3D and motion performance acceptance pending. 4: grounded AI assistant and API-cost controls pending. 5: service content and metadata foundations exist; formal keyword research, discovery measurements, Search Console and privacy-aware analytics remain pending. 6: full CSP/security review, live provider acceptance, physical-device testing and production launch remain pending.
 
-Home / Services / Work / Solutions / About / Insights / Contact are the target. Do not publish empty menu destinations. Existing seven content pages remain the foundation; new destinations need substantive content before entering primary navigation.
+Phase 2 acceptance is still awaiting actual provider-backed email delivery and a reviewed hosted preview. Passing automated mocks or a disposable test database must not be presented as production delivery.

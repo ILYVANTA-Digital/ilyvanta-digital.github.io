@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "web-design-development",
+    "name": "Web experiences",
+    "short": "A clear first impression. A useful next step.",
+    "description": "Business websites with clear positioning, accessible interfaces and a focused path from discovery to inquiry.",
+    "problem": "Visitors arrive, but struggle to understand your offer or take the next step.",
+    "approach": "Start with the buyer’s questions, map the information they need, and build a fast website around the actions that matter.",
+    "deliverables": [
+      "Content and customer-journey map",
+      "Responsive design system and reusable pages",
+      "Accessible Next.js implementation",
+      "Search metadata, structured data and launch checks"
+    ],
+    "inputs": "Your current website, services, audience, brand assets and the actions you want visitors to take.",
+    "measure": "Qualified inquiries, form completion and the speed of key landing pages.",
+    "boundary": "Copywriting volume, translations, integrations and ongoing maintenance are agreed in the scope.",
+    "project": "aurelia-house"
+  },
+  {
+    "slug": "custom-business-software",
+    "name": "Business software",
+    "short": "Less spreadsheet juggling. More shared context.",
+    "description": "Custom internal tools that connect records, permissions and everyday work in one understandable workflow.",
+    "problem": "Important work moves between spreadsheets, messages and people who hold the missing context.",
+    "approach": "Map one complete workflow before building. Define the record of truth, who can change it, and how mistakes are corrected.",
+    "deliverables": [
+      "Workflow and data model",
+      "Role and permission design",
+      "Core records, validation and audit requirements",
+      "Import, backup and operational handover plan"
+    ],
+    "inputs": "A sample of your current workflow with fictional data, team roles, recurring exceptions and existing tools.",
+    "measure": "Time to complete a task, duplicate entry and unresolved handoffs.",
+    "boundary": "Security, retention and migration requirements are assessed before real business data is introduced.",
+    "project": "umar-clinic"
+  },
+  {
+    "slug": "ai-automation",
+    "name": "AI & automation",
+    "short": "Automate the repeatable. Keep people in control.",
+    "description": "Practical AI assistants and workflow automation with clear limits, approved knowledge and human review.",
+    "problem": "Your team repeatedly classifies requests, answers the same questions or transfers information by hand.",
+    "approach": "Separate deterministic steps from tasks that benefit from a model. Add approvals where a wrong answer or action would be costly.",
+    "deliverables": [
+      "Automation opportunity and risk map",
+      "Approved knowledge and input boundaries",
+      "Integration prototype with human handoff",
+      "Evaluation examples, limits and failure handling"
+    ],
+    "inputs": "Representative tasks, approved reference material, the systems involved and examples of unacceptable outcomes.",
+    "measure": "Useful resolutions, review time, correction rate and cost per completed task.",
+    "boundary": "Model usage and external providers have separate running costs. A prototype is evaluated before automation expands.",
+    "project": "cafe-workflow"
+  },
+  {
+    "slug": "dashboards",
+    "name": "Operational dashboards",
+    "short": "Know what needs attention next.",
+    "description": "Dashboards that turn business records into clear priorities, useful filters and actionable reporting.",
+    "problem": "Your team has data, but finding the next action means opening several reports.",
+    "approach": "Define each metric, its source and the decision it supports. Make exceptions visible before adding decorative charts.",
+    "deliverables": [
+      "Metric definitions and source mapping",
+      "Role-specific views and accessible tables",
+      "Date filters, empty states and export workflows",
+      "Data freshness and reconciliation checks"
+    ],
+    "inputs": "Sample data, metric definitions, reporting frequency and the decisions each role needs to make.",
+    "measure": "Time to find an exception, reporting effort and agreement with the source records.",
+    "boundary": "A dashboard cannot correct unreliable source data automatically. Data quality work is scoped explicitly.",
+    "project": "umar-clinic"
+  },
+  {
+    "slug": "ecommerce",
+    "name": "Commerce experiences",
+    "short": "A considered journey from browse to basket.",
+    "description": "Product and ordering experiences with clear availability, reliable totals and a practical operations handoff.",
+    "problem": "Customers cannot easily find an item, understand the total or complete an order confidently.",
+    "approach": "Make catalog structure, stock rules and checkout responsibilities explicit. Review the operator’s workflow as carefully as the storefront.",
+    "deliverables": [
+      "Catalog and product-page design",
+      "Basket and checkout journey",
+      "Order and inventory handoff specification",
+      "Payment-provider and fulfillment integration plan"
+    ],
+    "inputs": "Catalog data, stock rules, delivery areas, payment requirements and your current commerce platform.",
+    "measure": "Basket completion, order corrections and stock reconciliation.",
+    "boundary": "Payment accounts, refunds, tax and fulfillment rules need business approval. Demo orders never move real money.",
+    "project": "sportshub"
+  },
+  {
+    "slug": "seo-ai-search",
+    "name": "Search & AI visibility",
+    "short": "Make your expertise easier to discover.",
+    "description": "Technical SEO, clear service content and trustworthy entity information for search and AI-assisted discovery.",
+    "problem": "People cannot find your business, or the pages they find do not answer their questions.",
+    "approach": "Check crawlability and intent first. Improve the service pages, evidence, internal links and structured information that help people evaluate you.",
+    "deliverables": [
+      "Technical crawl and priority audit",
+      "Service-intent and content map",
+      "Unique metadata and truthful structured data",
+      "Search Console and measurement handover"
+    ],
+    "inputs": "Your domain, Search Console access, target audiences, services and evidence you can publish.",
+    "measure": "Relevant impressions, qualified organic visits and inquiries over time.",
+    "boundary": "Rankings, AI citations and indexing are controlled by external platforms. No position or inclusion is guaranteed.",
+    "project": "aurelia-house"
+  }
+]

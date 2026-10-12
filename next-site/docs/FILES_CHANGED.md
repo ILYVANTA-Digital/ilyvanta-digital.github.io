@@ -52,3 +52,53 @@ Phase 1 automated checks pass; hosted preview and full manual review remain pend
 | `next-site/scripts/import-legacy.py` | Reproducible content and asset migration. |
 | `next-site/tsconfig.json` | Application setup, reproducible dependencies, strict types, lint or local commands. |
 | `next-site/docs/FILES_CHANGED.md` | Audit, migration evidence, architecture or reproducible handover documentation. |
+
+
+## Phase 2 — core experience
+
+- `.github/workflows/next-foundation.yml` — Repeatable production, browser and database verification or operations.
+- `next-site/.env.example` — Dependencies, safe environment template or tooling configuration.
+- `next-site/README.md` — Implementation, verification and operational status.
+- `next-site/app/[[...slug]]/page.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/app/api/contact/route.ts` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/app/foundation.css` — Remove replaced legacy runtime code; native React/CSS implements the replacement.
+- `next-site/app/layout.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/app/legacy.css` — Remove replaced legacy runtime code; native React/CSS implements the replacement.
+- `next-site/app/studio.css` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/biome.json` — Dependencies, safe environment template or tooling configuration.
+- `next-site/components/contact-form.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/components/contact-page.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/components/content-pages.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/components/home-link.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/components/homepage.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/components/legacy-document.tsx` — Remove replaced legacy runtime code; native React/CSS implements the replacement.
+- `next-site/components/navigation.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/components/project-card.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/components/site-shell.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/components/structured-data.tsx` — Native responsive experience, accessible interaction or server inquiry endpoint.
+- `next-site/content/pages.json` — Reviewed native content, project scope or route metadata.
+- `next-site/content/projects.json` — Reviewed native content, project scope or route metadata.
+- `next-site/content/services.json` — Reviewed native content, project scope or route metadata.
+- `next-site/content/solutions.json` — Reviewed native content, project scope or route metadata.
+- `next-site/db/001_leads.sql` — Validated, persistent and retryable inquiry handling.
+- `next-site/docs/CONTACT_OPERATIONS.md` — Implementation, verification and operational status.
+- `next-site/docs/PHASE_2.md` — Implementation, verification and operational status.
+- `next-site/e2e/foundation.spec.ts` — Repeatable production, browser and database verification or operations.
+- `next-site/lib/contact/email.ts` — Validated, persistent and retryable inquiry handling.
+- `next-site/lib/contact/http.ts` — Validated, persistent and retryable inquiry handling.
+- `next-site/lib/contact/options.ts` — Validated, persistent and retryable inquiry handling.
+- `next-site/lib/contact/schema.ts` — Validated, persistent and retryable inquiry handling.
+- `next-site/lib/contact/store.ts` — Validated, persistent and retryable inquiry handling.
+- `next-site/lib/pages.ts` — Dependencies, safe environment template or tooling configuration.
+- `next-site/package-lock.json` — Dependencies, safe environment template or tooling configuration.
+- `next-site/package.json` — Dependencies, safe environment template or tooling configuration.
+- `next-site/public/legacy/app.js` — Remove replaced legacy runtime code; native React/CSS implements the replacement.
+- `next-site/public/legacy/international.js` — Remove replaced legacy runtime code; native React/CSS implements the replacement.
+- `next-site/public/legacy/upgrade.js` — Remove replaced legacy runtime code; native React/CSS implements the replacement.
+- `next-site/scripts/check-production.mjs` — Repeatable production, browser and database verification or operations.
+- `next-site/scripts/contact.test.mjs` — Repeatable production, browser and database verification or operations.
+- `next-site/scripts/database.integration.mjs` — Repeatable production, browser and database verification or operations.
+- `next-site/scripts/foundation.test.mjs` — Repeatable production, browser and database verification or operations.
+- `next-site/scripts/migrate.mjs` — Repeatable production, browser and database verification or operations.
+- `next-site/scripts/retry-email.ts` — Repeatable production, browser and database verification or operations.
+- `next-site/tsconfig.json` — Dependencies, safe environment template or tooling configuration.

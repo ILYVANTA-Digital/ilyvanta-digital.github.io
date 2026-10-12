@@ -9,7 +9,10 @@
     ]
   },
   "formatter": {
-    "enabled": false
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
   },
   "linter": {
     "enabled": true,
@@ -20,30 +23,5 @@
   "assist": {
     "enabled": false
   },
-  "overrides": [
-    {
-      "includes": [
-        "components/legacy-document.tsx"
-      ],
-      "linter": {
-        "rules": {
-          "security": {
-            "noDangerouslySetInnerHtml": "off"
-          }
-        }
-      }
-    },
-    {
-      "includes": [
-        "app/foundation.css"
-      ],
-      "linter": {
-        "rules": {
-          "complexity": {
-            "noImportantStyles": "off"
-          }
-        }
-      }
-    }
-  ]
+  "overrides": []
 }

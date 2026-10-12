@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
 
-const server = spawn(process.execPath, ['node_modules/next/dist/bin/next', 'start', '--hostname', '127.0.0.1', '--port', '4173'], { stdio: ['ignore', 'pipe', 'pipe'] });
+const server = spawn(process.execPath, ['node_modules/next/dist/bin/next', 'start', '--hostname', '0.0.0.0', '--port', '4173'], { stdio: ['ignore', 'pipe', 'pipe'] });
 let log = '';
 server.stdout.on('data', data => { log += data; });
 server.stderr.on('data', data => { log += data; });

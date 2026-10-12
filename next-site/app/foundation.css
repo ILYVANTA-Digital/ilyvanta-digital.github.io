@@ -1,9 +1,0 @@
-:focus-visible{outline:3px solid #20746a;outline-offset:5px}body{font-size:var(--text-body);color:var(--color-text-primary);background:var(--color-bg-primary)}.contact-brief{padding:var(--space-5);background:var(--color-bg-secondary);border-radius:var(--radius-lg)}.contact-brief h3{font-size:var(--text-h3);margin-bottom:1rem}.contact-brief p{margin:1rem 0;line-height:1.7}.error-page{max-width:1000px;margin:auto;padding:10vh 6vw;min-height:80vh}.error-page h1{font-size:var(--text-h1);line-height:1.06;margin:2rem 0}.error-page p{font-size:var(--text-body-l);max-width:36rem;margin-bottom:2rem}.error-page>a:last-child:not(.button){display:block;margin-top:2rem}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.eyebrow{font-size:max(.75rem,12px)}.contact-email{overflow-wrap:anywhere}.contact-brief a{max-width:100%}@media(max-width:360px){.flagship-hero h1{font-size:2.7rem}.hero-actions{flex-wrap:wrap}.contact h2{font-size:2.75rem}.contact-email{font-size:1.15rem}.header{padding-inline:16px}.brand{gap:8px}.brand>span{font-size:.8rem}.section{padding-inline:20px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
-/* Navigation remains expanded if its enhancement script fails to initialize. */
-html:not(.navigation-ready) .menu-toggle{display:none}
-html:not(.navigation-ready) #navigation{display:flex;position:static;flex-wrap:wrap}
-html:not(.navigation-ready) .header{height:auto;min-height:100px;flex-wrap:wrap;gap:20px;padding-block:20px}
-/* Keep text readable throughout scroll transitions, including on slow devices. */
-.motion-reveal{opacity:1;transition:transform .6s}
-.hero-signature>span,.system-note,.breadcrumbs,.case-meta span,.project-brief span{color:#465d64}
-.window-top{color:#49677d}

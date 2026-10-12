@@ -1,0 +1,158 @@
+[
+  {
+    "path": "/",
+    "title": "ILYVANTA Digital — Web, Software & AI Automation",
+    "description": "An independent digital studio creating thoughtful websites, business software and AI workflows. Led by Umar Ilyas, working internationally.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/services/",
+    "title": "Services — ILYVANTA Digital",
+    "description": "Web experiences, business software, AI automation, dashboards, commerce and search visibility built around your next business priority.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/work/",
+    "title": "Selected work — ILYVANTA Digital",
+    "description": "Explore four self-directed ILYVANTA projects with practical workflows, interactive sample demos and transparent development limitations.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/solutions/",
+    "title": "Business solutions — ILYVANTA Digital",
+    "description": "Explore practical website and software approaches for hospitality, restaurants, clinics, professional services and early products.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/about/",
+    "title": "The studio — ILYVANTA Digital",
+    "description": "Meet ILYVANTA Digital, an independent studio led by Umar Ilyas in Pakistan, building websites and useful systems for international teams.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/process/",
+    "title": "How we work — ILYVANTA Digital",
+    "description": "From the first brief to handover: understand how ILYVANTA scopes, designs, builds and reviews a digital project.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/contact/",
+    "title": "Start a project — ILYVANTA Digital",
+    "description": "Tell ILYVANTA what you want to improve. Share your goals, project stage and requirements, or contact Umar directly by email.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/insights/",
+    "title": "Studio notes — ILYVANTA Digital",
+    "description": "Practical notes on planning useful websites, business software and automation, written by Umar Ilyas at ILYVANTA Digital.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/insights/prepare-a-project-brief/",
+    "title": "How to prepare a useful project brief — ILYVANTA Digital",
+    "description": "A practical project-brief checklist covering business problems, users, workflows, scope, constraints and evidence of success.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/privacy/",
+    "title": "Privacy — ILYVANTA Digital",
+    "description": "How ILYVANTA handles project inquiries, service providers, technical logs and your requests about personal information.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/expertise/search-visibility/",
+    "title": "SEO, AEO & AI search visibility — ILYVANTA Digital",
+    "description": "Understand ILYVANTA’s approach to crawlability, useful answers and trustworthy content for search and AI discovery. No ranking guarantees.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/services/web-design-development/",
+    "title": "Web experiences — ILYVANTA Digital",
+    "description": "Business websites with clear positioning, accessible interfaces and a focused path from discovery to inquiry.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/services/custom-business-software/",
+    "title": "Business software — ILYVANTA Digital",
+    "description": "Custom internal tools that connect records, permissions and everyday work in one understandable workflow.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/services/ai-automation/",
+    "title": "AI & automation — ILYVANTA Digital",
+    "description": "Practical AI assistants and workflow automation with clear limits, approved knowledge and human review.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/services/dashboards/",
+    "title": "Operational dashboards — ILYVANTA Digital",
+    "description": "Dashboards that turn business records into clear priorities, useful filters and actionable reporting.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/services/ecommerce/",
+    "title": "Commerce experiences — ILYVANTA Digital",
+    "description": "Product and ordering experiences with clear availability, reliable totals and a practical operations handoff.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/services/seo-ai-search/",
+    "title": "Search & AI visibility — ILYVANTA Digital",
+    "description": "Technical SEO, clear service content and trustworthy entity information for search and AI-assisted discovery.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/solutions/hospitality/",
+    "title": "Hospitality solutions — ILYVANTA Digital",
+    "description": "Hospitality website and workflow planning for clearer room discovery, inquiries and reception handoffs.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/solutions/restaurants/",
+    "title": "Restaurants & cafés solutions — ILYVANTA Digital",
+    "description": "Restaurant ordering and staff workflows built around accurate menus, confirmation and preparation handoffs.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/solutions/healthcare/",
+    "title": "Clinic operations solutions — ILYVANTA Digital",
+    "description": "Reception workflow planning for patient lookup, visit queues and payment records with clear privacy boundaries.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/solutions/professional-services/",
+    "title": "Professional services solutions — ILYVANTA Digital",
+    "description": "Service websites and inquiry workflows that help buyers understand expertise, scope and the next step.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/solutions/startups/",
+    "title": "Startups & product teams solutions — ILYVANTA Digital",
+    "description": "Focused product planning, web experiences and internal tools for testing an early business workflow.",
+    "image": "/assets/brand-sculpture.webp"
+  },
+  {
+    "path": "/work/aurelia-house/",
+    "title": "Aurelia House — Project study | ILYVANTA Digital",
+    "description": "A hotel website and operations concept connecting reservations, guest services and room readiness.",
+    "image": "/assets/hotel.webp"
+  },
+  {
+    "path": "/work/umar-clinic/",
+    "title": "Umar Clinic — Project study | ILYVANTA Digital",
+    "description": "A reception workflow concept for returning patients, visit queues, payment records and printable slips.",
+    "image": "/assets/clinic-concept.webp"
+  },
+  {
+    "path": "/work/cafe-workflow/",
+    "title": "Café Order Workflow — Project study | ILYVANTA Digital",
+    "description": "An ordering and staff-queue prototype with exact menu totals, explicit confirmation and approval rules.",
+    "image": "/assets/cafe-concept.webp"
+  },
+  {
+    "path": "/work/sportshub/",
+    "title": "SportsHub — Project study | ILYVANTA Digital",
+    "description": "A sports platform concept pairing event participation with a simple catalog, basket and sample checkout.",
+    "image": "/assets/sports-concept.webp"
+  }
+]
