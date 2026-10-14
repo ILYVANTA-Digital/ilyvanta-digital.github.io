@@ -20,3 +20,8 @@ NEXT TASK: Connect the prepared Netlify project to the repository, review the co
 - New-project SSO protection remains enabled for all deploys. No public launch or removal of protection occurred.
 - Exposed connector supports project creation/reads, but no repository-link/build/upload operation. User authorized browser dashboard fallback. Sign-in ended with Invalid state key; a fresh canonical project visit still showed login. Do not present an empty project URL as a working website.
 - The earlier GitHub approval-review usage limit no longer blocked the latest normal upload. Current application is on feature/experience-completion in draft PR #3. No production merge occurred.
+
+
+## Hosting follow-up — 14 October 2026
+
+The earlier empty-project/login blocker is superseded by the current deployment record in DEPLOYMENT.md. Repository connection is complete. Clean deploy `6acf599fb14b5c2ce17cff17` runs the official Next.js runtime, serves the site and has been reviewed across all 29 content routes plus four demo destinations. Private protection and noindex remain enabled. Exact code fa617db has passed 168/168 CI browser checks. Remaining gates: preview approval/public exposure, real contact providers, AI, analytics destination/monitoring and physical devices. No claim of full production completion or search rankings.

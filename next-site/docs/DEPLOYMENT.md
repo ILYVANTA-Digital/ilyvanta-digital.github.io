@@ -41,6 +41,23 @@ Skew protection is enabled at build for current Next.js 16.4.0. It does not auto
 
 Free quotas are not unlimited hosting guarantees. Review team usage before builds and production publication. No DNS change, account upgrade or previous live-site replacement occurred in this cycle.
 
-Prepared Netlify project created and independently read back on 12 October 2026: `ilyvanta-digital`, site ID `b77a1154-0835-4747-8ac6-73d95bec7e68`, dashboard https://app.netlify.com/projects/ilyvanta-digital. It is empty, not connected to Git and has no successful app deployment. Provider default SSO protection remains on. Do not treat the allocated subdomain as a public working site.
+Historical status on 12 October 2026 — prepared project: `ilyvanta-digital`, site ID `b77a1154-0835-4747-8ac6-73d95bec7e68`, dashboard https://app.netlify.com/projects/ilyvanta-digital. It is empty, not connected to Git and has no successful app deployment. Provider default SSO protection remains on. Do not treat the allocated subdomain as a public working site.
 
 Latest browser attempt: Invalid state key at the Netlify authentication callback. Fresh canonical project verification still showed login. No repository settings were changed. Resume using a fresh authorized sign-in; do not replay an expired callback URL.
+
+
+## Verified hosted review — 14 October 2026 (current status)
+
+The authentication issue above is resolved. Git continuous deployment is connected to `ILYVANTA-Digital/ilyvanta-digital.github.io`, branch `feature/experience-completion`. This branch is temporarily Netlify's production build context, but **all deployments remain team-private** and `SITE_INDEXABLE=false`. Git main has not been merged or replaced.
+
+The first deploy `6ace7189ac658f48f65689de` built successfully but served Netlify's 404 because the Next.js runtime had not run. The official Next.js plugin is installed through Netlify's UI. A clean rebuild used Runtime **5.16.2**, packaged `___netlify-server-handler`, and fixed the homepage.
+
+- Verified deploy: `6acf599fb14b5c2ce17cff17`, ready, 62 seconds, commit `fa617dbd80d491fc95ea15db2127146091d1dded`.
+- Build log: https://app.netlify.com/projects/ilyvanta-digital/deploys/6acf599fb14b5c2ce17cff17
+- Private review: https://6acf599fb14b5c2ce17cff17--ilyvanta-digital.netlify.app/
+- Primary URL: https://ilyvanta-digital.netlify.app/ (team login required).
+- Base `next-site`; publish `.next`; Node 24; lint, strict types, 15 tests and production build passed in Netlify.
+- All 29 registered content routes opened in the hosted browser, including the legacy search-visibility route. Four project images loaded after scrolling. Four demo redirects opened the expected existing sample workspaces on the separate ChatGPT Site host.
+- The browser used for this hosted review showed the still-art fallback when 3D was requested. Rendered 3D remains verified in Chromium/WebKit CI, not this cloud GPU or a physical device.
+
+`CONTACT_ENABLED=false` and `ANALYTICS_ENABLED=false` remain intentional. Database/email delivery, analytics destination, AI assistant and physical-device acceptance remain unfinished. No real inquiry was submitted. Public launch needs review and explicit approval to remove team-only protection; indexing must be enabled separately only for the approved public origin. No paid upgrade or DNS change occurred.

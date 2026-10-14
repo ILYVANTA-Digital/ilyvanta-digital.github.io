@@ -36,3 +36,23 @@ These follow-up changes are not covered by the scores above. Their measured resu
 ## Deployment boundary
 
 Latest application is in draft PR #3 on feature/experience-completion; main has not been replaced. Netlify project is created but not linked/deployed. Browser sign-in ended with the provider message “Invalid state key”; a fresh visit to the canonical project URL still showed login. No authenticated dashboard session, production cutover, real-device test, AI credential, hosted database/email acceptance or analytics delivery is claimed.
+
+## Follow-up verified at fa617db — 12 October 2026
+
+Run: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/actions/runs/38288715777
+
+Both jobs succeeded. Lint/types, 15 unit tests, 3 PostgreSQL integration tests, production build, 950 HTTP assertions and **168/168 browser tests** passed on the exact follow-up commit `fa617dbd80d491fc95ea15db2127146091d1dded`.
+
+| Device | Performance before → after | Accessibility | Best Practices | SEO | LCP before → after | CLS | TBT before → after |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Mobile | 77 → 95 | 100 → 100 | 100 → 100 | 69 → 69 | 3.166s → 2.824s | 0 → 0 | 623.5ms → 91ms |
+| Desktop | 100 → 100 | 100 → 100 | 100 → 100 | 69 → 69 | 0.562s → 0.572s | 0 → 0 | 0ms → 0ms |
+
+The baseline is the same commit as before, but its mobile score varied from 94 to 77 between runs. These single-run CI numbers are noisy and do not prove an 18-point gain caused by the fix. The final measured mobile result is 95; hosted/field performance remains unmeasured. SEO 69 remains the intentional preview noindex result.
+
+Browser artifact 11764458272; performance artifact 11763539019. Reviewed the new Chromium active-3D screenshot: the sculpture now fits completely within its canvas with surrounding space and unobstructed controls. Chromium and WebKit rendered; Firefox recorded GPU-unavailable fallback. Physical devices remain untested.
+
+
+## Hosted smoke verification — 14 October 2026
+
+Netlify deploy `6acf599fb14b5c2ce17cff17` serves fa617db with Runtime 5.16.2 and its server handler. All 29 registered content routes opened in the authenticated browser. The homepage and four work-card images rendered. The four demo redirects reached hotel, clinic, cafe and sports workspaces on the existing sample host. These are navigation/image smoke checks, not repeat end-to-end transaction tests. Current cloud GPU selected the documented still-art fallback. Primary and permalink remain team-private; observed metadata is noindex. Hosted Lighthouse, physical-device testing and actual email delivery were not performed. Full deployment details are in DEPLOYMENT.md.

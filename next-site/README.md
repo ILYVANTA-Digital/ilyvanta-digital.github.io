@@ -39,8 +39,8 @@ This repository's application root is `next-site/`. Work stays on feature branch
 
 No demo is a paid-client claim. The four existing interactive demos are hosted separately on the legacy Site. No real bookings, patient data or payments belong in those samples.
 
-## Current completion boundary (12 October 2026)
+## Current completion boundary (14 October 2026)
 
-Latest uploaded SEO/security work adds 29 content routes, buyer answers, author/schema structure, consent-gated analytics support and Netlify configuration. Local build/lint/types, 15 tests and 950 production checks pass. See docs/PHASE_5.md and docs/PHASE_6.md for the exact files, evidence and limitations. Combined CI at af6e4bf passes 168/168 browser tests; measured Lighthouse and visual findings are in docs/MEASURED_QA.md. AI, real contact delivery, monitoring and production deployment remain pending.
+Latest uploaded SEO/security work adds 29 content routes, buyer answers, author/schema structure, consent-gated analytics support and Netlify configuration. Local build/lint/types, 15 tests and 950 production checks pass. See docs/PHASE_5.md and docs/PHASE_6.md for the exact files, evidence and limitations. Combined CI at fa617db passes 168/168 browser tests; measured Lighthouse and visual findings are in docs/MEASURED_QA.md. AI, real contact delivery, monitoring and production deployment remain pending.
 
-Netlify project: https://app.netlify.com/projects/ilyvanta-digital — created but empty; a project is not a deployed website. No paid plan or DNS change.
+Netlify private review is working at https://ilyvanta-digital.netlify.app/ (team login required). Deploy 6acf599fb14b5c2ce17cff17 uses the official Next.js runtime and fixes the initial host 404. All 29 content routes and four existing demo destinations opened in the hosted browser. Public launch, real contact delivery and AI are still pending. See docs/DEPLOYMENT.md for exact evidence. No paid plan or DNS change.
