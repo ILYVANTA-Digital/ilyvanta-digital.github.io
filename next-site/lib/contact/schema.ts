@@ -1,5 +1,7 @@
 import { z } from "zod";
 import { budgets, serviceOptions } from "./options.ts";
+// Shared browser validation must not probe eval under the production CSP.
+z.config({ jitless: true });
 const line = (max: number) =>
   z
     .string()
