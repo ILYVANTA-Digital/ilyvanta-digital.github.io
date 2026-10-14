@@ -572,16 +572,19 @@ export function PrivacyPage() {
         </p>
         <h2>Website form and service providers</h2>
         <p>
-          When enabled, the form saves inquiries in PostgreSQL and uses Resend to send an agency
-          notification and a receipt. Hosting, database and email providers process the information
+          {process.env.CONTACT_PROVIDER === "netlify"
+            ? "This website uses Netlify Forms to receive and store project inquiries, filter spam and notify the studio. The form does not send you an automatic email receipt."
+            : "When enabled, the form saves inquiries in PostgreSQL and uses Resend to send an agency notification and a receipt."}
+          {" "}Hosting, form, database and email providers process the information
           needed to operate those services. These providers may process data outside your country.
           If the form is unavailable, you can contact the studio directly by email.
         </p>
         <h2>Abuse protection and retention</h2>
         <p>
-          The form uses short-lived, keyed hashes of network and email identifiers for rate
-          limiting; raw IP addresses are not stored in the lead table. Hosting providers may
-          maintain their own security logs. Inquiry records are intended to be reviewed or removed
+          {process.env.CONTACT_PROVIDER === "netlify"
+            ? "Netlify applies its spam filtering and processes request information to operate and protect the form."
+            : "The database form uses short-lived, keyed hashes of network and email identifiers for rate limiting; raw IP addresses are not stored in the lead table."}
+          {" "}Hosting providers may maintain their own security logs. Inquiry records are intended to be manually reviewed or removed
           after 180 days unless an active project or another necessary record requires continued
           retention.
         </p>
