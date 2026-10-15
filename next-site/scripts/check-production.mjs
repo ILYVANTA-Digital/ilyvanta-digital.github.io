@@ -8,6 +8,16 @@ for (const p of pages) {
   const r = await fetch(root + p.path);
   assert.equal(r.status, 200, p.path);
   const html = await r.text();
+  assert.equal(r.headers.get("x-frame-options"), "DENY");
+  assert.equal(r.headers.get("x-content-type-options"), "nosniff");
+  assert.match(r.headers.get("strict-transport-security"), /max-age=31536000/);
+  const csp = r.headers.get("content-security-policy");
+  assert.match(csp, /frame-ancestors 'none'/);
+  assert.match(csp, /object-src 'none'/);
+  assert.match(csp, /form-action 'self'/);
+  assert.doesNotMatch(csp, /unsafe-eval/);
+  assert.doesNotMatch(html, /<script[^>]+src="https:\/\/www.googletagmanager.com/);
+  checks += 8;
   assert.ok(
     html.includes(p.title.replaceAll("&", "&amp;")) || html.includes(p.title),
     `${p.path} title`,
@@ -32,8 +42,23 @@ for (const p of pages) {
     checks++;
   }
   for (const schema of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/g)) {
-    assert.equal(JSON.parse(schema[1])["@context"], "https://schema.org");
-    checks++;
+    const data = JSON.parse(schema[1]);
+    assert.equal(data["@context"], "https://schema.org");
+    assert.ok(data["@graph"].some((e) => e["@type"] === "Person"));
+    if (p.path.startsWith("/insights/") && p.path !== "/insights/") {
+      assert.ok(
+        data["@graph"].some(
+          (e) => e["@type"] === "Article" && e.author["@id"].endsWith("#umar-ilyas"),
+        ),
+      );
+      checks++;
+    }
+    const breadcrumb = data["@graph"].find((e) => e["@type"] === "BreadcrumbList");
+    if (breadcrumb) {
+      assert.equal(new URL(breadcrumb.itemListElement.at(-1).item).pathname, p.path);
+      checks++;
+    }
+    checks += 2;
   }
 }
 for (const slug of ["hotel", "clinic", "cafe", "sports"]) {

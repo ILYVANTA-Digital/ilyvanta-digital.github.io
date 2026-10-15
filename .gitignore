@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env*
+!.env.example
+.sites-runtime/
+worker/assets.js
+next-site/node_modules/
+next-site/.next/
+next-site/*.tsbuildinfo
+
+.netlify/

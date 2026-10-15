@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { inquirySchema, scoreInquiry } from "../lib/contact/schema.ts";
 import { readInquiryBody, contactReply, maxBodyBytes } from "../lib/contact/http.ts";
+import { submitNetlifyInquiry } from "../lib/contact/netlify-form.ts";
+import { readFileSync } from "node:fs";
 export const valid = {
   submissionId: "ac23936f-a2f3-4b8d-a3ed-93db0bc73e0a",
   name: " Demo   Person ",
@@ -27,6 +29,38 @@ test("valid inquiry is normalized; modest budgets remain accepted", () => {
   assert.equal(result.name, "Demo Person");
   assert.equal(result.email, "demo@example.com");
   assert.ok(scoreInquiry(result) > 0);
+});
+test("Netlify transport posts URL-encoded fields to the registered static form", async () => {
+  let calls = 0;
+  const skeleton = readFileSync(new URL("../public/__forms.html", import.meta.url), "utf8");
+  const result = await submitNetlifyInquiry(valid, async (url, init) => {
+    calls++;
+    assert.equal(url, "/__forms.html");
+    assert.equal(init.method, "POST");
+    assert.equal(init.headers["Content-Type"], "application/x-www-form-urlencoded");
+    const body = new URLSearchParams(init.body);
+    assert.equal(body.get("form-name"), "project-inquiry");
+    assert.equal(body.get("email"), "demo@example.com");
+    assert.equal(body.get("consent"), "true");
+    assert.equal(body.get("services"), "Web experiences");
+    for (const key of body.keys()) assert.ok(skeleton.includes(`name="${key}"`), key);
+    return new Response("<html>Success</html>", { status: 200 });
+  });
+  assert.equal(calls, 1);
+  assert.equal(result.ok, true);
+  assert.match(result.message, /received for review/);
+});
+test("Netlify transport rejects invalid inquiries and does not report HTTP failures as success", async () => {
+  let calls = 0;
+  const send = async () => { calls++; return new Response("Unavailable", { status: 503 }); };
+  const invalid = await submitNetlifyInquiry({ ...valid, services: [] }, send);
+  assert.equal(invalid.ok, false);
+  assert.match(invalid.fields.services, /Choose at least one service/);
+  assert.equal(calls, 0);
+  const unavailable = await submitNetlifyInquiry(valid, send);
+  assert.equal(unavailable.ok, false);
+  assert.match(unavailable.message, /could not confirm/);
+  await assert.rejects(submitNetlifyInquiry(valid, async () => { throw new Error("offline"); }), /offline/);
 });
 test("server schema rejects injection-like URLs, extra keys, missing consent and oversize values", () => {
   for (const patch of [

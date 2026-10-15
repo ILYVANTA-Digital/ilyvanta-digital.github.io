@@ -25,7 +25,7 @@ export function Navigation() {
   }, [open]);
   return (
     <header className="site-header">
-      <Link className="brand" href="/" aria-label="ILYVANTA Digital home">
+      <Link className="brand" href="/" aria-label="ILYVANTA Digital Studio home">
         <span className="brand-mark" aria-hidden="true">
           I<span>.</span>
         </span>

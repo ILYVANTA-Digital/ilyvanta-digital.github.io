@@ -1,6 +1,10 @@
-# Phase 1 verification — updated 10 October 2026
+# Verification history — latest results 12 October 2026
 
-## Status: AUTOMATED FOUNDATION CHECKS PASS / HOSTED PREVIEW BLOCKED
+## Current status
+
+Combined CI at `af6e4bf` passes 168/168 browser tests, lint/types, 15 unit tests, 3 PostgreSQL tests, build and 950 HTTP checks. Lighthouse measured mobile 94→93, desktop 100→100; see [MEASURED_QA.md](MEASURED_QA.md). Hosted Netlify preview remains blocked by a sign-in state error. Sections below are dated historical records, not current completion claims.
+
+## Historical foundation status
 
 The existing production Site has not been replaced. Phase 2 has not started.
 
@@ -85,3 +89,23 @@ Fix commit: `b23cb85ad5bf9e034fdbe456bbad3a50933a548d`. Demo links now use norma
 Visual review: first-run screenshots reviewed for the homepage, hotel study and contact page at 390px and 1440px (including 2x screenshots). Hero, form, headings and footer fit their layouts. Some initial full-page screenshots contained unloaded below-fold images because the screenshot had not scrolled to trigger lazy loading; capture now explicitly validates those images. This is browser emulation, not a physical-device test.
 
 Second run: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/actions/runs/38278936085 — 135/138 passed, including every live demo link and loaded sample dashboard. Remaining no-JS checks used a text matcher that excludes noscript content; changed to assert the actual fallback email link is visible.
+
+## Phase 2 verified rerun — 12 October 2026
+
+Commit: `6eb78942636101a953415ae7d7b4eb4da08e4648`.
+Run: https://github.com/ILYVANTA-Digital/ilyvanta-digital.github.io/actions/runs/38279767488
+Job: `114913916509`, conclusion `success`.
+
+Verified from job results and logs: lint, strict types, 9 content/contact tests, 3 PostgreSQL integration tests, production build, 591 production checks and **138/138 browser tests** across Chromium, Firefox and WebKit passed. This includes no-JavaScript direct-email fallback and navigation to all four hosted sample workspaces. Email transport in database tests is mocked; real inbox delivery is not verified.
+
+This result covers the Phase 2 commit only. Local Phase 3 commit `c9330d5` has not been uploaded or browser-tested: the GitHub tree write was not executed because automatic approval review hit a usage limit. Vercel deployment remains blocked by the previously observed workspace 403. Physical-device testing and Lighthouse scores remain unverified.
+
+PHASE: 2 verification / 3 handoff. TASK: Verify the completed CI rerun. FILES REVIEWED: CI job steps and logs, this testing record. FILES CREATED: None. FILES MODIFIED: docs/TESTING.md. IMPLEMENTATION: Recorded exact passing commit and test scope. WHY THIS APPROACH: Keep measured evidence separate from later untested changes. TESTS RUN: No redundant rerun; inspected the completed CI evidence. RESULTS: PASS within the stated Phase 2 scope. RISKS: Passing local/CI checks do not prove hosted email delivery or physical-device behavior. REMAINING: Phase 3 browser/performance verification and provider connections. NEXT TASK: Resolve the required OpenAI credential decision before AI implementation.
+
+## Phase 5/6 local verification — 12 October 2026
+
+Phase 5: lint/types, 12 tests, production build and 718 HTTP/content checks passed. Phase 6 final local verification: lint/types, **15 tests**, production build and **950 HTTP/link/schema/header/contact checks** passed. `npm audit --omit=dev` reported zero known runtime dependency vulnerabilities. Recursive client-bundle checks found none of the configured server-secret environment identifiers. No new secret was created or exposed by those checks.
+
+New browser cases cover no-JS FAQ access, no analytics requests in preview, and CSP-compatible navigation. They are implemented and typechecked, **not run**: the browser-capable CI has not received these local commits. The last 138/138 passing browser evidence remains scoped to remote Phase 2 SHA `6eb78942636101a953415ae7d7b4eb4da08e4648`. Never reuse that result for the new 3D, SEO, consent UI or security changes.
+
+Netlify project creation/readback succeeded. No Netlify build, deployed function, real inbox delivery, GA DebugView event, physical phone test, Lighthouse comparison or production launch occurred. The contact success browser test uses an explicitly mocked response; database transport tests also mock actual email sending.

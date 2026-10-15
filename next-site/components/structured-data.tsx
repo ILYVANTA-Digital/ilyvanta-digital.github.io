@@ -1,62 +1,85 @@
 import { siteOrigin, contactEmail } from "@/lib/site";
-import type { pages } from "@/lib/pages";
+import { pages } from "@/lib/pages";
 export function StructuredData({ path, page }: { path: string; page: (typeof pages)[number] }) {
+  const organizationId = `${siteOrigin}/#organization`;
+  const personId = `${siteOrigin}/about/#umar-ilyas`;
+  const isArticle = path.startsWith("/insights/") && path !== "/insights/";
   const organization = {
     "@type": "Organization",
-    "@id": `${siteOrigin}/#organization`,
+    "@id": organizationId,
     name: "ILYVANTA Digital",
     url: siteOrigin,
     email: contactEmail,
-    founder: {
-      "@type": "Person",
-      name: "Umar Ilyas",
-      sameAs: "https://www.linkedin.com/in/umar-ilyas-700437268/",
-    },
+    founder: { "@id": personId },
     sameAs: ["https://github.com/ILYVANTA-Digital"],
+  };
+  const person = {
+    "@type": "Person",
+    "@id": personId,
+    name: "Umar Ilyas",
+    url: `${siteOrigin}/about/`,
+    worksFor: { "@id": organizationId },
+    sameAs: ["https://www.linkedin.com/in/umar-ilyas-700437268/"],
+  };
+  const base = {
+    "@id": `${siteOrigin}${path}#content`,
+    name: page.title,
+    description: page.description,
+    url: siteOrigin + path,
+    inLanguage: "en",
   };
   const entity =
     path.startsWith("/work/") && path !== "/work/"
       ? {
+          ...base,
           "@type": "CreativeWork",
-          name: page.title,
-          description: page.description,
-          url: siteOrigin + path,
           image: siteOrigin + page.image,
-          creator: { "@id": `${siteOrigin}/#organization` },
+          creator: { "@id": organizationId },
           creativeWorkStatus: "Self-directed demonstration project",
         }
       : path.startsWith("/services/") && path !== "/services/"
-        ? {
-            "@type": "Service",
-            name: page.title,
-            description: page.description,
-            url: siteOrigin + path,
-            provider: { "@id": `${siteOrigin}/#organization` },
-          }
-        : {
-            "@type": "WebPage",
-            name: page.title,
-            description: page.description,
-            url: siteOrigin + path,
-          };
+        ? { ...base, "@type": "Service", provider: { "@id": organizationId } }
+        : isArticle
+          ? {
+              ...base,
+              "@type": "Article",
+              headline: page.title.split(" — ")[0],
+              author: { "@id": personId },
+              publisher: { "@id": organizationId },
+              mainEntityOfPage: siteOrigin + path,
+              image: siteOrigin + page.image,
+            }
+          : { ...base, "@type": "WebPage", isPartOf: { "@id": `${siteOrigin}/#website` } };
+  const parts = path.split("/").filter(Boolean);
+  const ancestors = parts
+    .map((_, i) => pages.find((p) => p.path === `/${parts.slice(0, i + 1).join("/")}/`))
+    .filter((p) => p !== undefined);
   const data = {
     "@context": "https://schema.org",
     "@graph": [
       organization,
+      person,
+      {
+        "@type": "WebSite",
+        "@id": `${siteOrigin}/#website`,
+        name: "ILYVANTA Digital",
+        url: siteOrigin,
+        publisher: { "@id": organizationId },
+      },
       entity,
       ...(path === "/"
-        ? [{ "@type": "WebSite", name: "ILYVANTA Digital", url: siteOrigin }]
+        ? []
         : [
             {
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Home", item: `${siteOrigin}/` },
-                {
+                ...ancestors.map((p, i) => ({
                   "@type": "ListItem",
-                  position: 2,
-                  name: page.title.split(" — ")[0],
-                  item: siteOrigin + path,
-                },
+                  position: i + 2,
+                  name: p.title.split(" — ")[0],
+                  item: siteOrigin + p.path,
+                })),
               ],
             },
           ]),
@@ -65,7 +88,7 @@ export function StructuredData({ path, page }: { path: string; page: (typeof pag
   return (
     <script
       type="application/ld+json"
-      // biome-ignore lint/security/noDangerouslySetInnerHtml: Developer-owned schema with escaped HTML delimiters, never user input.
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: Developer-owned schema escaped for HTML script embedding, never visitor input.
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
     />
   );

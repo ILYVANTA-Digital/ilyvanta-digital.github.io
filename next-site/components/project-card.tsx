@@ -13,7 +13,7 @@ export function ProjectCard({
       <Link
         href={`/work/${project.slug}/`}
         className="project-image"
-        aria-label={`Read ${project.name} project study`}
+        aria-label={`${project.category} — Read ${project.name} project study`}
       >
         <Image src={project.image} alt={project.alt} fill sizes="(max-width: 700px) 100vw, 50vw" />
         <span className="image-tag">{project.category}</span>

@@ -1,3 +1,5 @@
+import { AnalyticsConsent } from "@/components/analytics-consent";
+import { pages } from "@/lib/pages";
 import type { Metadata, Viewport } from "next";
 import { siteOrigin, indexable } from "@/lib/site";
 import { Navigation } from "@/components/navigation";
@@ -17,6 +19,9 @@ export const viewport: Viewport = {
   colorScheme: "light",
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const id = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
+  const analytics =
+    indexable && process.env.ANALYTICS_ENABLED === "true" && /^G-[A-Z0-9]+$/.test(id);
   return (
     <html lang="en">
       <body>
@@ -26,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navigation />
         {children}
         <Footer />
+        {analytics && <AnalyticsConsent measurementId={id} routes={pages.map((p) => p.path)} />}
         <noscript>
           <style>{`.menu-toggle{display:none}#navigation{display:flex;position:static;flex-wrap:wrap}.site-header{flex-wrap:wrap}`}</style>
         </noscript>

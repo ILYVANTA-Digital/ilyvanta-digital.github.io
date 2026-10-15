@@ -6,6 +6,40 @@ on:
 permissions:
   contents: read
 jobs:
+  netlify-contact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: next-site
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: next-site/package-lock.json
+      - run: npm ci
+      - run: npm run build
+        env:
+          CONTACT_PROVIDER: netlify
+          SITE_URL: https://ilyvanta-digital.netlify.app
+          SITE_INDEXABLE: 'true'
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test e2e/netlify-contact.spec.ts --project=chromium
+        env:
+          NETLIFY_FORM_TEST: 'true'
+      - name: Preserve form transport evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: netlify-contact-report
+          path: |
+            next-site/playwright-report/
+            next-site/test-results/
+          retention-days: 7
   validate:
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -54,3 +88,41 @@ jobs:
             next-site/playwright-report/
             next-site/test-results/
           retention-days: 7
+  performance:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: next-site
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: next-site/package-lock.json
+      - run: npm ci
+      - name: Build the pre-motion comparison
+        run: |
+          git worktree add /tmp/ilyvanta-before 6eb78942636101a953415ae7d7b4eb4da08e4648
+          npm ci --prefix /tmp/ilyvanta-before/next-site
+          npm --prefix /tmp/ilyvanta-before/next-site run build
+      - run: ANALYZE=true npm run build
+      - name: Compare mobile and desktop Lighthouse
+        run: node scripts/measure-lighthouse.mjs
+        env:
+          BASELINE_DIR: /tmp/ilyvanta-before/next-site
+      - name: Preserve measured performance evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: performance-comparison
+          path: |
+            next-site/performance-results/
+            next-site/.next/analyze/
+          include-hidden-files: true
+          retention-days: 14

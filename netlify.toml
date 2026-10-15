@@ -1,0 +1,18 @@
+# This repository contains one Next.js app in next-site.
+[build]
+  base = "next-site"
+  command = "npm run lint && npm run typecheck && npm test && npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+  NETLIFY_NEXT_SKEW_PROTECTION = "true"
+
+# Next.js is detected automatically; no pinned legacy adapter or SPA catch-all.
+# Runtime secrets belong in the Netlify environment UI.
+# Public SEO values must be available while Next prerenders metadata and sitemaps.
+[context.production.environment]
+  SITE_URL = "https://ilyvanta-digital.netlify.app"
+  SITE_INDEXABLE = "true"
+
+# Preview noindex is also enforced in lib/site-policy.ts.

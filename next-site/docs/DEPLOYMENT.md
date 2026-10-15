@@ -11,7 +11,7 @@ The live Site remains unchanged. This migration is a separate app under `next-si
 7. Configure production dependencies through provider settings; never put secrets in chat or commits.
 8. Review a preview and required CI checks. Stage a production build without assigning domains, verify it, then approve promotion/cutover.
 
-Next.js APIs cannot run on GitHub Pages. GitHub stores source; Vercel is the requested target for this new app. The existing public demo host continues to provide sample workflows until backend migration is verified.
+Next.js APIs cannot run on GitHub Pages. GitHub stores source; Netlify Free is now the approved preview path after the Vercel access blocker. The existing public demo host continues to provide sample workflows until backend migration is verified.
 
 No Vercel project, DNS change, paid resource or production database is created by this foundation.
 
@@ -26,3 +26,38 @@ The native agency experience is now on `feature/core-experience`, stacked on `fe
 A fresh connector check for the intended team (`team_juxt3OzRcWDrKnmhiWrykzTQ`, scope `umarilyas803-2491`) again returned 403. The local Vercel CLI is unavailable. No alternate workspace, token or browser session was used to bypass the failed authorization. Repeated unchanged calls will not help; the authorized account connection must have access to this workspace, or the owner must import the intended repository through their own Vercel session.
 
 After access is resolved, create a preview from `feature/core-experience`, keep indexing disabled, configure a separate preview database and verified email sender, and complete CONTACT_OPERATIONS.md's live acceptance steps. Do not deploy `main` expecting the new application: it still contains the original repository state pending review/merge.
+
+## Netlify option — 12 October 2026
+
+Connection verified: account umarilyas803@gmail.com, GitHub umarilyas803-hub, team ILYVANTA Digital (`umarilyas803-hub`, ID `6acd12455b5b3a8f18ef2447`), plan Free. Initial project list was empty. No paid plan was purchased. This does not itself deploy the website.
+
+Repo-root netlify.toml sets base next-site, publish .next, Node 24 and the full local validation/build command. Next.js is auto-detected using the current OpenNext adapter; no static export, old adapter pin or SPA index.html catch-all is configured. .netlify/ is ignored in both root and app so linking state cannot accidentally be committed.
+
+Latest source is uploaded to feature/experience-completion in draft PR #3. After dashboard sign-in succeeds, connect ILYVANTA-Digital/ilyvanta-digital.github.io to this team, enable feature branch previews, and build the reviewed feature commit. Main currently has no application; importing main as if it contained the app will fail. Keep production publishing separate from the preview review. Plugin project creation alone does not connect a repository or trigger a build; its currently exposed tools do not provide repository linking or deploy upload.
+
+Set SITE_URL, SITE_INDEXABLE=false, CONTACT_ENABLED=false and ANALYTICS_ENABLED=false in site settings for preview. Runtime secrets must use provider environment settings, not netlify.toml. Set secrets for both build and function use where scope controls are available; rebuild after changes. Do not enable the contact form until hosted database/Resend integration and network header behavior pass. SITE_INDEXABLE=true only after an approved production origin and launch review.
+
+Skew protection is enabled at build for current Next.js 16.4.0. It does not automatically protect direct client fetch calls. Our contact submission has its own idempotency reference, but API compatibility across deployments still needs review; we do not enable experimental skew cookies.
+
+Free quotas are not unlimited hosting guarantees. Review team usage before builds and production publication. No DNS change, account upgrade or previous live-site replacement occurred in this cycle.
+
+Historical status on 12 October 2026 — prepared project: `ilyvanta-digital`, site ID `b77a1154-0835-4747-8ac6-73d95bec7e68`, dashboard https://app.netlify.com/projects/ilyvanta-digital. It is empty, not connected to Git and has no successful app deployment. Provider default SSO protection remains on. Do not treat the allocated subdomain as a public working site.
+
+Latest browser attempt: Invalid state key at the Netlify authentication callback. Fresh canonical project verification still showed login. No repository settings were changed. Resume using a fresh authorized sign-in; do not replay an expired callback URL.
+
+
+## Verified hosted review — 14 October 2026 (current status)
+
+The authentication issue above is resolved. Git continuous deployment is connected to `ILYVANTA-Digital/ilyvanta-digital.github.io`, branch `feature/experience-completion`. This branch is temporarily Netlify's production build context, but **all deployments remain team-private** and `SITE_INDEXABLE=false`. Git main has not been merged or replaced.
+
+The first deploy `6ace7189ac658f48f65689de` built successfully but served Netlify's 404 because the Next.js runtime had not run. The official Next.js plugin is installed through Netlify's UI. A clean rebuild used Runtime **5.16.2**, packaged `___netlify-server-handler`, and fixed the homepage.
+
+- Verified deploy: `6acf599fb14b5c2ce17cff17`, ready, 62 seconds, commit `fa617dbd80d491fc95ea15db2127146091d1dded`.
+- Build log: https://app.netlify.com/projects/ilyvanta-digital/deploys/6acf599fb14b5c2ce17cff17
+- Private review: https://6acf599fb14b5c2ce17cff17--ilyvanta-digital.netlify.app/
+- Primary URL: https://ilyvanta-digital.netlify.app/ (team login required).
+- Base `next-site`; publish `.next`; Node 24; lint, strict types, 15 tests and production build passed in Netlify.
+- All 29 registered content routes opened in the hosted browser, including the legacy search-visibility route. Four project images loaded after scrolling. Four demo redirects opened the expected existing sample workspaces on the separate ChatGPT Site host.
+- The browser used for this hosted review showed the still-art fallback when 3D was requested. Rendered 3D remains verified in Chromium/WebKit CI, not this cloud GPU or a physical device.
+
+`CONTACT_ENABLED=false` and `ANALYTICS_ENABLED=false` remain intentional. Database/email delivery, analytics destination, AI assistant and physical-device acceptance remain unfinished. No real inquiry was submitted. Public launch needs review and explicit approval to remove team-only protection; indexing must be enabled separately only for the approved public origin. No paid upgrade or DNS change occurred.

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { HeroArt } from "./hero-art";
 import Link from "next/link";
 import services from "@/content/services.json";
 import solutions from "@/content/solutions.json";
@@ -33,19 +33,7 @@ export function Homepage() {
               </Link>
             </div>
           </div>
-          <div className="hero-art">
-            <Image
-              src="/assets/brand-sculpture.webp"
-              alt="Interwoven teal glass and brushed-metal sculpture representing connected systems"
-              fill
-              priority
-              sizes="(max-width: 760px) 100vw, 55vw"
-            />
-            <div className="art-caption">
-              <span>FORM / FUNCTION / CONNECTION</span>
-              <span>ILYVANTA — 01</span>
-            </div>
-          </div>
+          <HeroArt />
         </div>
         <div className="hero-bottom wrap">
           <span>WEB EXPERIENCES</span>

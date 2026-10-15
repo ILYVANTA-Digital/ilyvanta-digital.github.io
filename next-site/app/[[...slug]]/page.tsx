@@ -1,3 +1,5 @@
+import articles from "@/content/articles.json";
+import { InsightArticle } from "@/components/insight-article";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPage, pages } from "@/lib/pages";
@@ -35,7 +37,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: page.description,
     alternates: { canonical: page.path },
     openGraph: {
-      type: "website",
+      type:
+        page.path.startsWith("/insights/") && page.path !== "/insights/" ? "article" : "website",
       title: page.title,
       description: page.description,
       url: siteOrigin + page.path,
@@ -57,7 +60,9 @@ export default async function Page({ params }: Props) {
   const project = projects.find((p) => path === `/work/${p.slug}/`);
   const service = services.find((s) => path === `/services/${s.slug}/`);
   const solution = solutions.find((s) => path === `/solutions/${s.slug}/`);
-  if (project) body = <CaseStudy project={project} />;
+  const article = articles.find((a) => path === `/insights/${a.slug}/`);
+  if (article) body = <InsightArticle article={article} />;
+  else if (project) body = <CaseStudy project={project} />;
   else if (service) body = <ServicePage service={service} />;
   else if (solution) body = <SolutionPage solution={solution} />;
   else

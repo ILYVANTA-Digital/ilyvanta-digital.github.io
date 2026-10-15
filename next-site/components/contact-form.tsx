@@ -1,8 +1,11 @@
 "use client";
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { announceConversion } from "@/lib/analytics-policy";
 import { budgets, serviceOptions } from "@/lib/contact/options";
-export function ContactForm({ enabled }: { enabled: boolean }) {
+import { submitNetlifyInquiry } from "@/lib/contact/netlify-form";
+export function ContactForm({ enabled, provider = "database" }: { enabled: boolean; provider?: "database" | "netlify" }) {
   const form = useRef<HTMLFormElement>(null);
+  const started = useRef(false);
   const status = useRef<HTMLDivElement>(null);
   const [busy, setBusy] = useState(false);
   const [sent, setSent] = useState(false);
@@ -35,6 +38,16 @@ export function ContactForm({ enabled }: { enabled: boolean }) {
       utmCampaign: query.get("utm_campaign") || "",
     };
     try {
+      if (provider === "netlify") {
+        const result = await submitNetlifyInquiry(payload);
+        setMessage(result.message);
+        setErrors(result.fields || {});
+        if (result.ok) {
+          setSent(true);
+          announceConversion("contact_submitted");
+        }
+        return;
+      }
       const response = await fetch("/api/contact/", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -45,6 +58,7 @@ export function ContactForm({ enabled }: { enabled: boolean }) {
       setMessage(result.message || "Please contact the studio by email.");
       if (response.ok) {
         setSent(true);
+        if (response.status === 201) announceConversion("contact_submitted");
       } else {
         setErrors(result.fields || {});
       }
@@ -61,9 +75,15 @@ export function ContactForm({ enabled }: { enabled: boolean }) {
     <form
       ref={form}
       className="inquiry-form"
-      action="/api/contact/"
+      action={provider === "netlify" ? "/__forms.html" : "/api/contact/"}
       method="post"
       onSubmit={submit}
+      onFocus={() => {
+        if (!started.current) {
+          started.current = true;
+          announceConversion("contact_started");
+        }
+      }}
       aria-label="Project inquiry"
     >
       {!enabled && (
@@ -268,7 +288,7 @@ export function ContactForm({ enabled }: { enabled: boolean }) {
       </div>
       <div className="full-width">
         <button className="button dark" type="submit" disabled={busy || sent || !id}>
-          {busy ? "Sending…" : sent ? "Inquiry saved" : "Send project inquiry ↗"}
+          {busy ? "Sending…" : sent ? (provider === "netlify" ? "Inquiry received" : "Inquiry saved") : "Send project inquiry ↗"}
         </button>
         <p className="form-help" style={{ marginTop: 14 }}>
           This starts a conversation. It does not commit you to a project, price or schedule.

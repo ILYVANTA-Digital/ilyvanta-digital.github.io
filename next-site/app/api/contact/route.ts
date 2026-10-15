@@ -1,4 +1,5 @@
 import { after } from "next/server";
+import { allowedContactOrigin, trustedNetwork } from "@/lib/contact/network";
 import { inquirySchema } from "@/lib/contact/schema";
 import { InputError, readInquiryBody, contactReply } from "@/lib/contact/http";
 import { contactConfigured, consumeRateLimit, saveInquiry } from "@/lib/contact/store";
@@ -7,21 +8,7 @@ export const runtime = "nodejs";
 export const maxDuration = 60;
 export async function POST(request: Request) {
   try {
-    const origin = request.headers.get("origin");
-    const allowed = new Set([
-      new URL(request.url).origin,
-      process.env.SITE_URL,
-      process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined,
-    ]);
-    const requestUrl = new URL(request.url);
-    if (
-      !process.env.VERCEL &&
-      ["localhost", "127.0.0.1", "0.0.0.0"].includes(requestUrl.hostname)
-    ) {
-      allowed.add(`${requestUrl.protocol}//localhost:${requestUrl.port}`);
-      allowed.add(`${requestUrl.protocol}//127.0.0.1:${requestUrl.port}`);
-    }
-    if (!origin || !allowed.has(origin))
+    if (!allowedContactOrigin(request, process.env))
       return contactReply(request, 403, "Please submit the inquiry from this website.");
     const body = await readInquiryBody(request);
     const parsed = inquirySchema.safeParse(body);
@@ -43,11 +30,7 @@ export async function POST(request: Request) {
         503,
         "The project form is temporarily unavailable. Please email ilyvantadigital@gmail.com; your details have not been saved.",
       );
-    // Vercel overwrites this provider header; never trust arbitrary x-forwarded-for.
-    const network =
-      process.env.VERCEL === "1"
-        ? request.headers.get("x-vercel-forwarded-for")?.split(",")[0].trim() || "unknown"
-        : "non-vercel";
+    const network = trustedNetwork(request, process.env);
     const limits = await Promise.all([
       consumeRateLimit(`network:${network}`, 5, 900),
       consumeRateLimit(`email:${parsed.data.email}`, 3, 86400),

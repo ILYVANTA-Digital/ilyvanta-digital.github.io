@@ -2,6 +2,7 @@ import { contactConfigured } from "@/lib/contact/store";
 import { ContactForm } from "./contact-form";
 import { Intro } from "./site-shell";
 export function ContactPage() {
+  const netlify = process.env.CONTACT_PROVIDER === "netlify";
   return (
     <>
       <Intro
@@ -35,7 +36,7 @@ export function ContactPage() {
             Prefer WhatsApp? ↗
           </a>
         </aside>
-        <ContactForm enabled={contactConfigured()} />
+        <ContactForm enabled={netlify || contactConfigured()} provider={netlify ? "netlify" : "database"} />
       </section>
     </>
   );

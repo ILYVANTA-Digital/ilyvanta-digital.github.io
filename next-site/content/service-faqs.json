@@ -1,0 +1,86 @@
+{
+  "web-design-development": [
+    {
+      "question": "How much does a business website cost?",
+      "answer": "Cost depends on the number of page types, content, integrations and approval rounds. Share your essential customer journey and budget range; we define the scope before quoting. Hosting, domains and ongoing support are separate items unless included in the agreement."
+    },
+    {
+      "question": "How long does a website redesign take?",
+      "answer": "A schedule is agreed after reviewing the content, page types and integrations. Content approval and access to existing accounts can affect delivery as much as development. We use review checkpoints so dependencies are visible before a launch date is promised."
+    },
+    {
+      "question": "Will the website work on phones?",
+      "answer": "Responsive layouts and keyboard access are part of the implementation scope. We test agreed screen widths and production workflows, then identify any actual devices still needing review. Browser emulation is useful evidence but is not a substitute for every physical device."
+    }
+  ],
+  "custom-business-software": [
+    {
+      "question": "When is custom software worth considering?",
+      "answer": "Consider it when a repeated workflow cannot be handled well by configuring existing tools, and the cost of errors or manual handoffs justifies maintaining a custom system. Start by mapping the workflow and comparing a smaller integration against a new application."
+    },
+    {
+      "question": "Can you migrate existing records?",
+      "answer": "Migration needs a separate plan: map fields, remove duplicates, test with a limited sample, reconcile totals and keep a recovery copy. We agree which system remains the source of truth and how the team will verify imported records before changing live data."
+    },
+    {
+      "question": "Who owns the software and accounts?",
+      "answer": "Ownership, repository access, hosting accounts, third-party licences and handover responsibilities belong in the written agreement. We identify recurring service costs and maintenance tasks before delivery so the application does not depend on an undocumented personal account."
+    }
+  ],
+  "ai-automation": [
+    {
+      "question": "What does an AI automation project do?",
+      "answer": "It connects a defined task, approved information and existing tools to reduce repeated manual steps. Examples include drafting a reply for review or sorting incoming requests. Actions with significant consequences need explicit rules and a human approval point."
+    },
+    {
+      "question": "Will AI replace our existing software?",
+      "answer": "Often an integration is enough. We first check whether your existing tools expose reliable interfaces and whether ordinary rules can solve the problem. A model is useful when the task needs interpretation, but it adds running costs, uncertainty and evaluation work."
+    },
+    {
+      "question": "Can confidential records be used?",
+      "answer": "Do not send confidential records through a public project inquiry or demonstration. Before using real data, agree on access, provider terms, retention and the minimum information required. Discovery can start with fictional or anonymized examples."
+    }
+  ],
+  "dashboards": [
+    {
+      "question": "What makes a dashboard useful?",
+      "answer": "A useful dashboard connects each number to a decision. Define the source, calculation, reporting period and responsible person before drawing charts. Show data freshness and exceptional records so a team can investigate a problem instead of only seeing a total."
+    },
+    {
+      "question": "Can reports combine several systems?",
+      "answer": "Yes, when the systems provide suitable access and their definitions can be reconciled. Agree on record identifiers, time zones, refresh intervals and missing-data behavior. A combined report should make discrepancies visible instead of hiding them in one apparently precise number."
+    },
+    {
+      "question": "Can staff see different information?",
+      "answer": "Role-specific views are possible, but hiding a button is not access control. Permissions need server-side checks and tests for each role. The scope should name who may view, edit, export and delete records."
+    }
+  ],
+  "ecommerce": [
+    {
+      "question": "Does a demo checkout accept real payments?",
+      "answer": "No. The samples in this portfolio use fictional orders and do not move money. A live checkout requires an approved payment provider, server-side verification, business rules and a tested order reconciliation process."
+    },
+    {
+      "question": "Can the store support existing stock workflows?",
+      "answer": "First decide which system owns stock and how reservations, cancellations and returns affect it. An integration must handle repeated requests and failed updates. We agree on these rules before connecting a storefront to live inventory."
+    },
+    {
+      "question": "What do you need before building a store?",
+      "answer": "Bring a sample catalog, product variants, delivery areas, stock rules and payment requirements. Also identify who will maintain pricing and customer-facing policies. These inputs shape both the shopping experience and the operations screens."
+    }
+  ],
+  "seo-ai-search": [
+    {
+      "question": "What is the difference between SEO, AEO and GEO?",
+      "answer": "SEO focuses on discoverability in search; AEO emphasizes direct answers to questions; GEO describes improving content for generative search experiences. These terms overlap. Our practical work is crawlable pages, clear service explanations, consistent identity and evidence readers can evaluate."
+    },
+    {
+      "question": "Can you guarantee first-page rankings or AI citations?",
+      "answer": "No. Search engines and AI services decide what to show. We can improve the website, document the changes and measure relevant queries and inquiries after launch. Neither a plugin nor structured data guarantees a position or inclusion in an AI answer."
+    },
+    {
+      "question": "How should we measure progress?",
+      "answer": "Start with an agreed baseline for relevant queries, indexed pages and qualified organic inquiries. Separate branded searches from broader service searches. Review changes over time and account for seasonality, site changes and the actual quality of leads\u2014not only visits."
+    }
+  ]
+}
