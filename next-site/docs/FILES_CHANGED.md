@@ -165,3 +165,22 @@ Paths are relative to repository root. These changes are uploaded in draft PR #3
 - e2e/foundation.spec.ts: retain project-link coverage with the corrected accessible name.
 - docs/MEASURED_QA.md: exact measured scores, artifacts, rendering evidence and limitations.
 - README.md and phase/testing/deployment records: replace stale local-only status with verified remote evidence.
+
+
+## Public launch — 14–15 October 2026
+
+| File | Reason |
+| --- | --- |
+| `netlify.toml` | Make the public canonical and indexing settings available during production prerendering; preview noindex is preserved. |
+| `next-site/lib/contact/netlify-form.ts` | Validated, URL-encoded Netlify Forms transport with honest failure handling. |
+| `next-site/public/__forms.html` | Register all form fields and honeypot at deploy time. |
+| `next-site/components/contact-form.tsx` | Select the configured contact provider and show accessible submission results. |
+| `next-site/components/contact-page.tsx` | Enable the selected Netlify transport. |
+| `next-site/components/content-pages.tsx` | Explain actual Netlify storage and notification behavior in the privacy notice. |
+| `next-site/lib/contact/schema.ts` | Disable Zod JIT so browser validation respects the production CSP without unsafe-eval. |
+| `next-site/.env.example` | Document the optional contact provider without secrets. |
+| `next-site/scripts/contact.test.mjs` | Verify payload registration, validation, and failure behavior. |
+| `next-site/e2e/netlify-contact.spec.ts` | Verify successful submission and retryable failure in the browser. |
+| `.github/workflows/next-foundation.yml` | Add a production-mode Netlify contact validation job. |
+| `next-site/docs/PUBLIC_LAUNCH.md` | Record tested commits, public deployment, real test submission, indexing checks, and remaining owner/account gates. |
+| `next-site/docs/FILES_CHANGED.md` | Record this phase's file inventory. |
